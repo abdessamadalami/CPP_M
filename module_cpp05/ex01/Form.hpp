@@ -1,31 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
+/*   Form.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sultan <sultan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/19 07:07:07 by ael-oual          #+#    #+#             */
-/*   Updated: 2022/10/19 14:16:29 by sultan           ###   ########.fr       */
+/*   Created: 2022/10/19 14:24:45 by sultan            #+#    #+#             */
+/*   Updated: 2022/10/19 15:29:48 by sultan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-class Bureaucrat
+#include "Bureaucrat.hpp"
+
+class Form : Bureaucrat 
 {
 private:
     const std:: string name;
-    int grade;
+    bool index;
+    const int grade_req_to_sign;
+    const int grade_req_to_execut;
+    
 public:
-    Bureaucrat(/* args */);
-    Bureaucrat(std::string name, int grade);   
-    ~Bureaucrat();
-    void GradeTooHighException();
-    void GradeTooLowException();
-    int getGrade()const;
-    std:: string getName()const;
-    void increment();
-    void decriment();
-   // Bureaucrat operator=( const Bureaucrat &B);
+    Form(/* args */);
+    ~Form();
+    std:: string get_name() const;
+    bool get_index() const;
+    int get_grade_req_to_sign() const;
+    int get_grade_req_to_execut() const;
+    void beSigned( Bureaucrat A);
+    
 };
-std::ostream& operator<< (std:: ostream& COUT, const Bureaucrat& B);
+
+
