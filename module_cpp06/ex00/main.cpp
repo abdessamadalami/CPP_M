@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ael-oual <ael-oual@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sultan <sultan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 09:02:27 by ael-oual          #+#    #+#             */
-/*   Updated: 2022/11/01 17:36:47 by ael-oual         ###   ########.fr       */
+/*   Updated: 2022/11/02 18:38:24 by sultan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,49 +14,39 @@
 #include <stdio.h>
 #include <iostream>
 
-// int main(int ag, char **av)
-// {
-    // if (ag <= 1)
-    //     return 0;
-   // const int a = 10;
-    // const int *b = &a;
-
-    // std:: cout << "int: "<<(int) atoi(av[1]) << std::endl;
-    // std:: cout << "float: "<<(float)atoi(av[1]) << std::endl;    
-    // std:: cout << "float: "<<(double)atoi(av[1]) << std::endl; 
-   // int a = 10.234;
-    // std :: cout << 
-    //printf(" %f ", (float)a);
-    // int *a = 10;
-    
-    //int  *c;
-  
-    // pass at compile time, may fail at run time
-    // int* q = (int*)&c; 
-    
-
-// }
-
-
-
-#include <iostream>
-using namespace std;
-class Base {
-    public:
-        int c;
-};
-class Derived : public Base 
+void check_type_arg(char *ptr)
 {
-    public:
-        int a;
-};
-int main()
+    // std:: cout << ptr;
+    std:: string str (ptr);
+    
+    std::cout << str.length();
+    if (str.length() == 1 && !isdigit(str[0] - '0') )
+    {
+        std :: cout << " i am "<< str[0] << '\n';
+        if (!isprint(str[0]))
+            std:: cout << "not printible char \n";
+        else
+            std ::cout << "i am char\n";
+    }
+}
+
+int main(int ag, char **av)
 {
-    Derived d1;
-    d1.a = 1;
-    // cout << d1.a
-     Derived b1 = (Derived)(d1); // allowed
-    // Derived* b2 = static_cast<Derived*>(&d1);
-    // cout << b2->a;
-    return 0;
+    if (ag <= 1)
+    {
+        std:: cout << "error argument\n";
+        return 1;
+    }
+  //  char c ='\n';
+    std::string a(av[1]);
+    std::cout << isprint(a);
+    std:: cout << "good " << a[0];
+    //std::cout << a[0];
+    // check_type_arg(av[1]);
+    
+
+    
+
+    // double d  = *(double *)av[1];
+    // std:: cout << a << std:: endl << b << std:: endl << c << std :: endl << d << std::endl;
 }
