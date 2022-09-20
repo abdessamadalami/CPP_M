@@ -1,25 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Account.cpp                                        :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ael-oual <ael-oual@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/29 08:14:03 by ael-oual          #+#    #+#             */
-/*   Updated: 2022/09/16 19:08:19 by ael-oual         ###   ########.fr       */
+/*   Created: 2022/09/20 13:08:31 by ael-oual          #+#    #+#             */
+/*   Updated: 2022/09/20 16:34:01 by ael-oual         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Zombie.hpp"
 
-
-Account::Account()
+Zombie* newZombie( std::string name )
 {
-    
+    Zombie *alami;
+   
+    alami = new Zombie;
+    alami->set_name(name);
+    alami->announs();
+    return alami;
 }
-int main (int argc, char **argv)
+
+int main()
 {
-    Account alami(0);
-    std::string command, first_name,last_name, nickname, phone, secret, id;
-    
-    return 0;
+    Zombie *abdessamd;
+    abdessamd = newZombie("abdessanad");
+    delete abdessamd;
+    randomChump("alami");
+    //delete (*abdessamd);
 }

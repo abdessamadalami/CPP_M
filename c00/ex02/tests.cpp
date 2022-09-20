@@ -3,8 +3,13 @@
 #include <functional>
 #include "Account.hpp"
 
+int Account::_nbAccounts = 0;
+int Account::_totalAmount=0;
+int Account::_totalNbDeposits=0;
+int Account::_totalNbWithdrawals=0;
 
-int		main( void ) {
+int		main( void )
+{
 
 	typedef std::vector<Account::t>							  accounts_t;
 	typedef std::vector<int>								  ints_t;
@@ -26,10 +31,10 @@ int		main( void ) {
 	size_t const		w_size( sizeof(w) / sizeof(int) );
 	ints_t				withdrawals( w, w + w_size );
 	ints_t::iterator	wit_begin	= withdrawals.begin();
-	ints_t::iterator	wit_end		= withdrawals.end();
+	ints_t::iterator	wit_end		= withdrawals.end(); 
 
 	Account::displayAccountsInfos();
-	std::for_each( acc_begin, acc_end, std::mem_fun_ref( &Account::displayStatus ) );
+	std::for_each( acc_begin, acc_end, std:: mem_fun_ref( &Account::displayStatus ) );
 
 	for ( acc_int_t it( acc_begin, dep_begin );
 		  it.first != acc_end && it.second != dep_end;
@@ -48,8 +53,7 @@ int		main( void ) {
 		(*(it.first)).makeWithdrawal( *(it.second) );
 	}
 
-	Account::displayAccountsInfos();
-	std::for_each( acc_begin, acc_end, std::mem_fun_ref( &Account::displayStatus ) );
-
+	 Account::displayAccountsInfos();
+	 std::for_each( acc_begin, acc_end, std::mem_fun_ref( &Account::displayStatus ) );
 	return 0;
 }
