@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Weapon.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sultan <sultan@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ael-oual <ael-oual@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/21 18:23:02 by sultan            #+#    #+#             */
-/*   Updated: 2022/09/21 19:02:06 by sultan           ###   ########.fr       */
+/*   Updated: 2022/09/22 17:59:03 by ael-oual         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ class Weapon
 private:
     std:: string type;
 public:
-    std:: string getType();
+    const std:: string&  getType();
     void setType( std ::string str);
     Weapon(std ::string str);
+    Weapon();
     ~Weapon();
 };
-

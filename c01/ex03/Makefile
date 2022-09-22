@@ -3,17 +3,17 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: sultan <sultan@student.42.fr>              +#+  +:+       +#+         #
+#    By: ael-oual <ael-oual@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 1980/01/01 01:48:04 by sultan            #+#    #+#              #
-#    Updated: 1980/01/01 01:49:15 by sultan           ###   ########.fr        #
+#    Updated: 2022/09/22 17:39:18 by ael-oual         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC = HumanA.cpp HumanA.hpp HumanB.cpp HumanB.hpp Weapon.cpp Weapon.hpp main.cpp
+SRC =  Weapon.cpp main.cpp
 FLAGS = -Wall -Wextra -Werror -std=c++98
 CC = c++
-NAME = Zombie
+NAME = Weapon
 OBJ = $(SRC:.cpp=.o)
 all : $(NAME)
 $(NAME) : $(OBJ)

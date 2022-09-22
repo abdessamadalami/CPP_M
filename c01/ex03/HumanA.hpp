@@ -3,35 +3,30 @@
 /*                                                        :::      ::::::::   */
 /*   HumanA.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sultan <sultan@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ael-oual <ael-oual@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/21 18:39:01 by sultan            #+#    #+#             */
-/*   Updated: 1980/01/01 01:50:17 by sultan           ###   ########.fr       */
+/*   Updated: 2022/09/22 19:33:53 by ael-oual         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string>
-#include <iostream>
 #include "Weapon.hpp"
 
 class HumanA
 {
 private:
     std:: string name;
-    Weapon m4;    
+    Weapon &weapon;
 public:
-    HumanA()
-    {}
-    HumanA(std:: string str, Weapon m)
+    HumanA(std::string str, Weapon &w) : weapon(w)
     {
         name = str;
-        m4 = m;
     }
-   
     ~HumanA()
-    {}
+    {
+    }
     void attack()
     {
-        std:: cout << name <<  "attacks with their weapon type";
+        std:: cout << name <<  " attacks with their weapon type " << weapon.getType() << std::endl;
     }
 };
