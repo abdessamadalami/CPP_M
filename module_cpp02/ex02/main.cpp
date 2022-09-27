@@ -5,28 +5,24 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ael-oual <ael-oual@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/20 13:08:31 by ael-oual          #+#    #+#             */
-/*   Updated: 2022/09/20 16:34:01 by ael-oual         ###   ########.fr       */
+/*   Created: 2022/09/26 17:29:20 by ael-oual          #+#    #+#             */
+/*   Updated: 2022/09/27 18:41:13 by ael-oual         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "Fixed.hpp"
+#include <iostream>
 
-Zombie* newZombie( std::string name )
-{
-    Zombie *alami;
-   
-    alami = new Zombie;
-    alami->set_name(name);
-    alami->announs();
-    return alami;
-}
-
-int main()
-{
-    Zombie *abdessamd;
-    abdessamd = newZombie("abdessanad");
-    delete abdessamd;
-    randomChump("alami");
-    //delete (*abdessamd);
+int main( void ) {
+    
+    Fixed a;
+    Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
+    std::cout << a << std::endl;
+    std::cout << ++a << std::endl;
+    std::cout << a << std::endl;
+    std::cout << a++ << std::endl;
+    std::cout << a << std::endl;
+    std::cout << b << std::endl;
+    std::cout << Fixed::max( a, b ) << std::endl;
+    return 0;
 }
