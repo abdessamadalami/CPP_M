@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Point.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ael-oual <ael-oual@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sultan <sultan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 18:17:59 by ael-oual          #+#    #+#             */
-/*   Updated: 2022/09/28 16:35:25 by ael-oual         ###   ########.fr       */
+/*   Updated: 2022/09/28 19:01:30 by sultan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,19 @@ Point::Point(const Point &a)
 //     std:: cout << "Assignment operator called " << std::endl;
 //     return *this;
 // }
+
+std ::ostream& operator<<(std ::ostream& COUT, const Point &a)
+{
+     //a.toFloat_x();
+    float x,y;
+    y = a.toFloat_y();
+    x =  a.toFloat_x();
+//    // float v = a.toFloat_y();
+    COUT << x << " " << y ;
+    
+  //  std::cout << " \nform operator<< " ;
+    return (COUT);
+}
     
 Point::~Point()
 {
@@ -64,31 +77,35 @@ Point::~Point()
 
 //! membre functions
  
-// int Fixed:: getRawBits(void) const
-// {
-//     return fixed_point_x;
-// }
+int Point :: getRawBits_x(void) const
+{
+    return fixed_point_x;
+}
+int Point :: getRawBits_y(void) const
+{
+    return fixed_point_y;
+}
 
 // void Fixed:: setRawBits( int const raw )
 // {
 //     fixed_point = raw;
 // }
 
-// float Point:: toFloat_x( void ) const
-// {
-//     float e = fixed_point_x;
-//     // std :: cout << e << std::endl;
-//     e = e / (1 << 8);
-//     return e;
-// }
+float Point:: toFloat_x( void ) const
+{
+    float e = fixed_point_x;
+    // std :: cout << e << std::endl;
+    e = e / (1 << 8);
+    return e;
+}
 
-// float Point:: toFloat_y( void ) const
-// {
-//     float e = fixed_point_y;
-//     // std :: cout << e << std::endl;
-//     e = e / (1 << 8);
-//     return e;
-// }
+float Point:: toFloat_y( void ) const
+{
+    float e = fixed_point_y;
+    // std :: cout << e << std::endl;
+    e = e / (1 << 8);
+    return e;
+}
 //! membre functions operators << < > >= <=
 
 // bool  Point:: operator<(const Point &a)
@@ -132,12 +149,14 @@ Point  Point:: operator+(const Point &a)
     return (fixed);
 }
 
-// Point  Point:: operator-(const Point &a)
-// {
-//     Point fixed;
-//     fixed = this->fixed_point - a.fixed_point;
-//     return fixed;
-// }
+Point  Point:: operator-(const Point &a)
+{
+    Point fixed;
+    fixed.fixed_point_x = this->fixed_point_x - a.fixed_point_x;
+    fixed.fixed_point_y = this->fixed_point_y - a.fixed_point_y;
+    
+    return (fixed);
+}
 
 // Point  Point:: operator*(const Point &a)
 // {
