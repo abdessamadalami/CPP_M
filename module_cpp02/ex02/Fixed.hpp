@@ -6,7 +6,7 @@
 /*   By: ael-oual <ael-oual@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 17:28:31 by ael-oual          #+#    #+#             */
-/*   Updated: 2022/09/27 18:39:29 by ael-oual         ###   ########.fr       */
+/*   Updated: 2022/09/28 15:10:17 by ael-oual         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,10 +37,10 @@ public:
     bool operator !=(const Fixed &a);
     bool operator ==(const Fixed &a);
     
-    int  operator +(const Fixed &a);
-    int  operator -(const Fixed &a);
-    int  operator *(const Fixed &a);
-    int  operator /(const Fixed &a);
+    Fixed  operator +(const Fixed &a);
+    Fixed  operator -(const Fixed &a);
+    Fixed  operator *(const Fixed &a);
+    Fixed  operator /(const Fixed &a);
 
     static Fixed min(const Fixed &a, const Fixed &b);
     static Fixed max(const Fixed &a, const Fixed &b);
@@ -52,7 +52,7 @@ public:
     Fixed operator++();
     Fixed operator++(int);
     Fixed operator--();
-    void  operator--(int);
+    Fixed  operator--(int);
     
     
 };
