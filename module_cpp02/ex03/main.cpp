@@ -3,72 +3,53 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sultan <sultan@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ael-oual <ael-oual@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 17:29:20 by ael-oual          #+#    #+#             */
-/*   Updated: 2022/09/28 19:18:08 by sultan           ###   ########.fr       */
+/*   Updated: 2022/09/29 16:24:22 by ael-oual         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Point.hpp"
 #include <iostream>
-#include <iostream>
 
-bool det (Point u, Point v)
+int area(Point p1, Point p2, Point p3)
 {
-  float fixed;
-  // std::cout <<  " u " <<  u << std ::endl;
-  // std ::cout << " v " <<  v << std:: endl;
-   //Point p = (v.toFloat_x )
-   fixed = (u.getRawBits_x() * v.getRawBits_y()) - (u.getRawBits_y() * v.getRawBits_x());
-   fixed = fixed /(1 << 16);
-   //fixed = (u.getRawBits_x() * v.getRawBits_y())/256 - (u.getRawBits_y() * v.getRawBits_x());
-   std:: cout <<  "ALANI " << fixed  << std::endl;
-    
-   
-return true;
-  
+int are = ((p1.getRawBits_x() * (p2.getRawBits_y() - p3.getRawBits_y())
+            + p2.getRawBits_x() * (p3.getRawBits_y() - p1.getRawBits_y())
+            + p3.getRawBits_x() * (p1.getRawBits_y() - p2.getRawBits_y()))/2);
+   (are < 0) ? are *= -1 : are;
+ return (are);
 }
+
+
 bool bsp( Point  a, Point  b, Point  c, Point  point)
 {
-  
-  Point ab(b - a);
-  std ::cout << ab.toFloat_x() << std::endl;
-  std ::cout << ab.toFloat_y() << std::endl;
-  
-  Point ap(point - a);
-  std ::cout << ap.toFloat_x() << std::endl;
-  std ::cout << ap.toFloat_y() << std::endl;
-  
-  det(ab,ap);
-  
-  // Point bc(c - b);
-  // std ::cout << bc.toFloat_x() << std::endl;
-  // std ::cout << bc.toFloat_y() << std::endl;
-  
-  // Point bp(point - b);
-  // std ::cout << bp.toFloat_x() << std::endl;
-  // std ::cout << bp.toFloat_y() << std::endl;
-  
-  // Point ca(a - c);
-  // std ::cout << ca.toFloat_x() << std::endl;
-  // std ::cout << ca.toFloat_y() << std::endl;
-  
-
-  Point cp(point - c);
-  std ::cout << cp.toFloat_x() << std::endl;
-  std ::cout << cp.toFloat_y() << std::endl;
-  
-  
-  return true;
+    float T,A1,A2,A3;
+    if (point == a || point == b || point == c)
+        return false;
+    T  =  area (a,b,c);
+    A1 = area (point, b, c);
+    A2 = area (a, point, c);
+    A3 = area (a, b, point);
+    
+    std:: cout << " abc " << T << std::endl;
+    std:: cout << " Pbc " << A1 << std::endl;
+    std:: cout << " aPc " << A2 << std::endl;
+    std:: cout << " abP " << A3 << std::endl;
+    if (A1  == 0 || A2 == 0 || A3 == 0)
+      return false;
+    if(T ==  A1 + A2 + A3) 
+        return true;
+      return false;  
 }
+
 int main( void ) 
 {
-  Point  a(3,2);
-  Point  b(4,5);
-  Point  c(1,2);
-  Point  point(3,12);
-
-  bsp( a, b, c, point);
-  
+  Point  a(4,8);
+  Point  b(2,4);
+  Point  c(5,2);
+  Point  point(4,4);
+  (bsp( a, b, c, point)) ? std::cout << "true\n": std::cout << "false\n" ;
+  return  0;
 }
