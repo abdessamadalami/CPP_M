@@ -6,7 +6,7 @@
 /*   By: sultan <sultan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 18:17:59 by ael-oual          #+#    #+#             */
-/*   Updated: 2022/09/28 19:01:30 by sultan           ###   ########.fr       */
+/*   Updated: 1980/01/01 01:07:01 by sultan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -129,14 +129,18 @@ float Point:: toFloat_y( void ) const
 // }
 //! membre functions operators != == =+
 
-// bool  Fixed:: operator==(const Fixed &a)
-// {
-//     return (this->fixed_point == a.fixed_point);
-// }
-// bool  Fixed:: operator!=(const Fixed &a)
-// {
-//     return (this->fixed_point != a.fixed_point);
-// }
+bool  Point:: operator==(const Point &a)
+{
+    return (this->fixed_point_x == a.fixed_point_x &&
+            this->fixed_point_y == a.fixed_point_y
+            );
+}
+ bool Point :: operator!=(const Point &a)
+ {
+    return (this->fixed_point_x != a.fixed_point_x ||
+            this->fixed_point_y != a.fixed_point_y
+            );
+ }
 
 //! membre functions operators + - * /
 

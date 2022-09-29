@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ael-oual <ael-oual@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sultan <sultan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 18:17:59 by ael-oual          #+#    #+#             */
-/*   Updated: 2022/09/28 15:09:16 by ael-oual         ###   ########.fr       */
+/*   Updated: 1980/01/01 00:46:37 by sultan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,7 @@ int Fixed:: toInt( void ) const
 }
 
 //! membre functions operators << < > >= <=
+//? the operator returns a reference to the ostream it just wrote.
 
 std ::ostream& operator<<(std ::ostream& COUT, const Fixed &a)
 {
