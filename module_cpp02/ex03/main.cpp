@@ -6,7 +6,7 @@
 /*   By: ael-oual <ael-oual@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 17:29:20 by ael-oual          #+#    #+#             */
-/*   Updated: 2022/09/29 16:24:22 by ael-oual         ###   ########.fr       */
+/*   Updated: 2022/09/30 08:31:28 by ael-oual         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ int are = ((p1.getRawBits_x() * (p2.getRawBits_y() - p3.getRawBits_y())
    (are < 0) ? are *= -1 : are;
  return (are);
 }
-
 
 bool bsp( Point  a, Point  b, Point  c, Point  point)
 {

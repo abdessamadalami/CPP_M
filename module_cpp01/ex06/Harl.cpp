@@ -6,7 +6,7 @@
 /*   By: ael-oual <ael-oual@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/24 11:29:55 by ael-oual          #+#    #+#             */
-/*   Updated: 2022/09/24 20:28:14 by ael-oual         ###   ########.fr       */
+/*   Updated: 2022/09/29 16:43:59 by ael-oual         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,8 @@ void Harl:: complain( std::string level )
             break;
         index++;
     }
-switch (index)
+    
+     switch (index)
     {
         case 0:
             std::cout << "[" << ptr[0] << "]\n";
