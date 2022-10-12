@@ -6,7 +6,7 @@
 /*   By: ael-oual <ael-oual@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 08:36:46 by ael-oual          #+#    #+#             */
-/*   Updated: 2022/10/12 15:53:49 by ael-oual         ###   ########.fr       */
+/*   Updated: 2022/10/12 16:05:15 by ael-oual         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 ScavTrap :: ScavTrap(std::string Name):ClapTrap(Name, 100, 50, 20)
 {
-    
+    std::cout << "ClapTrap constructor" << std::endl;
 }
 
 ScavTrap::ScavTrap()

@@ -6,13 +6,13 @@
 /*   By: ael-oual <ael-oual@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 11:30:33 by ael-oual          #+#    #+#             */
-/*   Updated: 2022/10/12 15:17:33 by ael-oual         ###   ########.fr       */
+/*   Updated: 2022/10/12 16:06:07 by ael-oual         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 
-FragTrap::FragTrap(std::string name):ScavTrap(name) //! mablanxch
+FragTrap::FragTrap(std::string name):ClapTrap(name, 100,100,30) //! mablanxch
 {
     std:: cout << "FragTrap constructor " << std::endl;
     Hit_points = 100 ;
@@ -34,16 +34,8 @@ FragTrap::FragTrap()
     Attack_damage = 30;
 }
 
+
 void FragTrap ::highFivesGuys()
 {
     std:: cout << " high fives " << std::endl;
 }
-//  FragTrap  FragTrap ::operator = (const FragTrap& t)
-//  {
-//     this->name = t.name;
-//     this->Hit_points = t.Hit_points;
-//     this->Energy_point = t.Energy_point;
-//     this->Attack_damage = t.Attack_damage;
-//     std:: cout << "Assignment operator called " << std::endl;
-//     return *this;
-//  }

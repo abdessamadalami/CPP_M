@@ -6,7 +6,7 @@
 /*   By: ael-oual <ael-oual@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 07:26:35 by ael-oual          #+#    #+#             */
-/*   Updated: 2022/10/12 15:12:23 by ael-oual         ###   ########.fr       */
+/*   Updated: 2022/10/12 16:07:29 by ael-oual         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,3 +60,8 @@ ClapTrap::~ClapTrap()
     std::cout << " ClapTrap destructor" << std:: endl;
 }
 
+ClapTrap::ClapTrap(std::string name, unsigned int Hit_points, unsigned int Energy_point, unsigned int Attack_damage)
+   :name(name), Hit_points(Hit_points), Energy_point(Energy_point), Attack_damage(Attack_damage)
+{
+    std::cout << "constructor ClapTrap" << std::endl;
+}
