@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zomie.cpp                                          :+:      :+:    :+:   */
+/*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ael-oual <ael-oual@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 15:46:36 by ael-oual          #+#    #+#             */
-/*   Updated: 2022/09/20 15:46:56 by ael-oual         ###   ########.fr       */
+/*   Updated: 2022/10/02 18:12:55 by ael-oual         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,17 @@ Zombie:: ~Zombie()
 {
     std:: cout << " this zombie destroyed " <<name<< std::endl;
 }
- Zombie:: Zombie(std:: string name)
+
+ Zombie:: Zombie(std:: string Name)
 {
-    set_name(name);
+ //std::cout << "constructor \n";
+    name = Name; 
     announs();
 }
 
 Zombie:: Zombie()
 {
+  //  std::cout << "default \n";
 }
 
 std::string Zombie:: get_name()

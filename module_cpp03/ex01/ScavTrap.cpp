@@ -1,20 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ael-oual <ael-oual@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/24 10:34:53 by ael-oual          #+#    #+#             */
-/*   Updated: 2022/10/02 18:38:16 by ael-oual         ###   ########.fr       */
+/*   Created: 2022/10/12 08:36:46 by ael-oual          #+#    #+#             */
+/*   Updated: 2022/10/12 15:53:49 by ael-oual         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Harl.hpp"
+#include "ScavTrap.hpp"
 
-int main()
+ScavTrap :: ScavTrap(std::string Name):ClapTrap(Name, 100, 50, 20)
 {
-    Harl harl;
-    harl.complain("DEBddUG");
-    // DEBUG ,INFO,WARNING, ERROR     
+    
+}
+
+ScavTrap::ScavTrap()
+{
+   std::cout <<  "default contructor ScavTrap " << std::endl;
+}
+
+ScavTrap::~ScavTrap()
+{
+    std:: cout << "destructor ScavTrap " << std::endl;
+}
+
+void ScavTrap:: guardGate()
+{
+    std :: cout << "this" << name << "now in Gate keeper mode" << std::endl;
 }

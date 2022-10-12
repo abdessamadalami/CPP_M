@@ -5,16 +5,20 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ael-oual <ael-oual@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/24 10:34:53 by ael-oual          #+#    #+#             */
-/*   Updated: 2022/10/02 18:38:16 by ael-oual         ###   ########.fr       */
+/*   Created: 2022/10/12 08:51:23 by ael-oual          #+#    #+#             */
+/*   Updated: 2022/10/12 15:04:58 by ael-oual         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Harl.hpp"
+#include "FragTrap.hpp"
 
 int main()
 {
-    Harl harl;
-    harl.complain("DEBddUG");
-    // DEBUG ,INFO,WARNING, ERROR     
+   // ClapTrap a("alami");
+   //  ScavTrap s("al ouali alami");
+   //  s.attack("abdessmad");
+   // s.guardGate();
+    FragTrap a;
+   a.attack("abdessamd");
+    
 }

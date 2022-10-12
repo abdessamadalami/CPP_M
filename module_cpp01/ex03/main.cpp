@@ -6,7 +6,7 @@
 /*   By: ael-oual <ael-oual@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/21 18:58:29 by sultan            #+#    #+#             */
-/*   Updated: 2022/09/23 18:18:47 by ael-oual         ###   ########.fr       */
+/*   Updated: 2022/10/02 18:33:39 by ael-oual         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ int main()
 {
 {
     Weapon club = Weapon("crude spiked club");
+    
     HumanA bob("Bob", club);
     bob.attack();
     club.setType("some other type of club");
@@ -28,12 +29,9 @@ int main()
 {
     Weapon club = Weapon("crude spiked club");
     HumanB jim("Jim");
-   // std :: cout << &club << std::endl;
     jim.setWeapon(club);
-   jim.attack();
-   club.setType("some other type of club");
-   //std :: cout << &club << std::endl;
-   //std ::cout << &club << std ::endl;
+    jim.attack();
+    club.setType("some other type of club");
     jim.attack();
 }
 return 0;

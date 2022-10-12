@@ -1,20 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ael-oual <ael-oual@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/24 10:34:53 by ael-oual          #+#    #+#             */
-/*   Updated: 2022/10/02 18:38:16 by ael-oual         ###   ########.fr       */
+/*   Created: 2022/10/12 11:31:19 by ael-oual          #+#    #+#             */
+/*   Updated: 2022/10/12 15:16:03 by ael-oual         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Harl.hpp"
+#include "ScavTrap.hpp"
 
-int main()
+class FragTrap : public  ClapTrap
 {
-    Harl harl;
-    harl.complain("DEBddUG");
-    // DEBUG ,INFO,WARNING, ERROR     
-}
+private:
+    
+public:
+    FragTrap(std:: string name);
+    void highFivesGuys();
+    FragTrap(const FragTrap &a);
+   // FragTrap operator=(const FragTrap& t);
+    ~FragTrap();
+    FragTrap();
+};
+
+

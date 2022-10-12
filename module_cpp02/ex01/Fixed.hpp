@@ -6,7 +6,7 @@
 /*   By: ael-oual <ael-oual@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 17:28:31 by ael-oual          #+#    #+#             */
-/*   Updated: 2022/09/27 13:45:02 by ael-oual         ###   ########.fr       */
+/*   Updated: 2022/10/12 13:43:02 by ael-oual         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,7 @@ public:
     float toFloat( void ) const;
     int toInt( void ) const;
 };
-    std ::ostream& operator<<(std ::ostream& COUT,const Fixed &a);
-
+std ::ostream& operator<<(std ::ostream& COUT,const Fixed &a);
 
 
 

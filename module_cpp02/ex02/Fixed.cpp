@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sultan <sultan@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ael-oual <ael-oual@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 18:17:59 by ael-oual          #+#    #+#             */
-/*   Updated: 1980/01/01 00:46:37 by sultan           ###   ########.fr       */
+/*   Updated: 2022/09/30 16:35:34 by ael-oual         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -141,7 +141,7 @@ Fixed  Fixed:: operator-(const Fixed &a)
 Fixed  Fixed:: operator*(const Fixed &a)
 {
     Fixed fixed;
-    fixed.fixed_point = ((this->fixed_point) * (a.fixed_point)) / 256;
+    fixed.fixed_point = ((this->fixed_point) * (a.fixed_point)) / (1 << shift );
     return (fixed);
 }
 
@@ -202,6 +202,7 @@ Fixed Fixed:: max(const Fixed &a, const Fixed &b)
 
 Fixed Fixed:: min(Fixed &a, Fixed &b)
 {
+    std :: cout << fixed_point;
     if (a.fixed_point < b.fixed_point)
         return a;
     return b;

@@ -1,4 +1,7 @@
-# C-
+# M C++ 01 -
+# default constructor when (variable or array allocation)
+#
+
 # Initializer List is used in initializing the data members of a class.The list of members to be initialized is indicated with constructor as a comma-separated list followed by a colon. Following is an example that uses the initializer list to initialize x and y of Point class.
 # when we have a const or refernce members data in calss we must use initialize list to initialize this member data:
 

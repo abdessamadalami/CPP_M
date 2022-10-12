@@ -1,20 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ael-oual <ael-oual@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/24 10:34:53 by ael-oual          #+#    #+#             */
-/*   Updated: 2022/10/02 18:38:16 by ael-oual         ###   ########.fr       */
+/*   Created: 2022/10/12 08:35:52 by ael-oual          #+#    #+#             */
+/*   Updated: 2022/10/12 11:26:09 by ael-oual         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Harl.hpp"
+#include "ClapTrap.hpp"
 
-int main()
+class ScavTrap: public ClapTrap
 {
-    Harl harl;
-    harl.complain("DEBddUG");
-    // DEBUG ,INFO,WARNING, ERROR     
-}
+private:
+    //std:: string name;
+public:
+    
+    ScavTrap(std::string name);
+    void guardGate();
+     ScavTrap();
+    ~ScavTrap();
+};
+
+

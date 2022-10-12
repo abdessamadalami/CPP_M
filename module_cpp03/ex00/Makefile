@@ -5,17 +5,17 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ael-oual <ael-oual@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/09/24 10:34:07 by ael-oual          #+#    #+#              #
-#    Updated: 2022/10/03 12:18:34 by ael-oual         ###   ########.fr        #
+#    Created: 2022/10/12 08:07:08 by ael-oual          #+#    #+#              #
+#    Updated: 2022/10/12 08:11:21 by ael-oual         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC = main.cpp Harl.cpp
+SRC = main.cpp ClapTrap.cpp
 FLAGS = -Wall -Wextra -Werror -std=c++98
-NAME = Harl
+NAME = ClapTrap
 all : $(NAME)
 $(NAME) : $(OBJ)
 	$(CXX) $(FLAGS) $(SRC) -o $(NAME)
-fclean : clean
+fclean :
 	rm -f $(NAME)
 re : fclean all

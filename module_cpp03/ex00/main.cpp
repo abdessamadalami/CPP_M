@@ -5,16 +5,15 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ael-oual <ael-oual@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/24 10:34:53 by ael-oual          #+#    #+#             */
-/*   Updated: 2022/10/02 18:38:16 by ael-oual         ###   ########.fr       */
+/*   Created: 2022/10/12 08:05:57 by ael-oual          #+#    #+#             */
+/*   Updated: 2022/10/12 08:33:03 by ael-oual         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Harl.hpp"
+#include "ClapTrap.hpp"
 
 int main()
 {
-    Harl harl;
-    harl.complain("DEBddUG");
-    // DEBUG ,INFO,WARNING, ERROR     
+    ClapTrap a;
+    
 }

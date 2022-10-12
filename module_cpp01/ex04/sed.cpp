@@ -6,14 +6,14 @@
 /*   By: ael-oual <ael-oual@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/24 09:58:14 by ael-oual          #+#    #+#             */
-/*   Updated: 2022/09/24 09:59:03 by ael-oual         ###   ########.fr       */
+/*   Updated: 2022/10/03 12:26:16 by ael-oual         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "sed.hpp"
+// :s1(argv[2]),s2(argv[3]),file_name(argv[1])
 file_rep:: file_rep(int ag, char **argv)
 {
-    std:: ifstream Input;
     if (ag != 4)
     {
         std:: cerr<< "error argument" << std::endl;
@@ -26,25 +26,31 @@ file_rep:: file_rep(int ag, char **argv)
 
 void file_rep::sed_f()
 {
-    std:: ifstream input;
+    std:: ifstream input; //  read file 
     std:: size_t position;
+    std:: string line;
     input.open(file_name);
     if(!input)
     {
         std:: cerr<< "error file" << std::endl;
-        exit(0);
+       return;
     }
-    std:: getline(input, buffer);
-    while(!s1.length() && s1 != s2)
+    while (input)
     {
-        position = buffer.find(s1);
-        if (position > buffer.length())
+        buffer += line;
+        std:: getline(input, line);
+        if(!input.eof())
         {
-            std::cout <<buffer << std::endl ;
-            break;
+            line += "\n";
         }
-        buffer.erase(position, s1.length());
-        buffer.insert(position, s2);
+    }
+    while(s1.length() && s1 != s2)
+    {
+        position = buffer.find(s1); 
+        if (position > buffer.length()) // max of size_t 
+            break;
+        buffer.erase(position, s1.length()); // delete with range
+        buffer.insert(position, s2);// insert for position
     }
    outfile(buffer);
 }

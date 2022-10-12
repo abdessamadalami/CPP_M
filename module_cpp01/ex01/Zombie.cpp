@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sultan <sultan@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ael-oual <ael-oual@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 15:46:36 by ael-oual          #+#    #+#             */
-/*   Updated: 2022/09/21 15:38:46 by sultan           ###   ########.fr       */
+/*   Updated: 2022/10/02 18:30:15 by ael-oual         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 Zombie:: ~Zombie()
 {
-    std:: cout << " this zombie destroyed " <<name<< std::endl;
+    std:: cout << "this zombie destroyed " <<name<< std::endl;
 }
 
 Zombie:: Zombie() {}

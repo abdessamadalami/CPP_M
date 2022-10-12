@@ -6,7 +6,7 @@
 /*   By: ael-oual <ael-oual@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 17:28:31 by ael-oual          #+#    #+#             */
-/*   Updated: 2022/09/28 15:10:17 by ael-oual         ###   ########.fr       */
+/*   Updated: 2022/09/30 16:20:17 by ael-oual         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,18 +42,17 @@ public:
     Fixed  operator *(const Fixed &a);
     Fixed  operator /(const Fixed &a);
 
-    static Fixed min(const Fixed &a, const Fixed &b);
-    static Fixed max(const Fixed &a, const Fixed &b);
+   static Fixed min(const Fixed &a, const Fixed &b);
+   static Fixed max(const Fixed &a, const Fixed &b);
 
    static Fixed max(Fixed &a, Fixed &b);
-    static Fixed min(Fixed &a, Fixed &b);
+   static Fixed min(Fixed &a, Fixed &b);
     
     
     Fixed operator++();
     Fixed operator++(int);
     Fixed operator--();
     Fixed  operator--(int);
-    
     
 };
     std ::ostream& operator<<(std ::ostream& COUT,const Fixed &a);
