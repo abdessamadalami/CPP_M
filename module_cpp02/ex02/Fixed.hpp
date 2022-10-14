@@ -6,7 +6,7 @@
 /*   By: ael-oual <ael-oual@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 17:28:31 by ael-oual          #+#    #+#             */
-/*   Updated: 2022/09/30 16:20:17 by ael-oual         ###   ########.fr       */
+/*   Updated: 2022/10/14 15:28:03 by ael-oual         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ public:
     Fixed operator++();
     Fixed operator++(int);
     Fixed operator--();
-    Fixed  operator--(int);
+    Fixed operator--(int);
     
 };
     std ::ostream& operator<<(std ::ostream& COUT,const Fixed &a);

@@ -1,30 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ael-oual <ael-oual@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/12 08:35:52 by ael-oual          #+#    #+#             */
-/*   Updated: 2022/10/14 16:14:39 by ael-oual         ###   ########.fr       */
+/*   Created: 2022/10/13 19:24:04 by ael-oual          #+#    #+#             */
+/*   Updated: 2022/10/14 18:17:25 by ael-oual         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-#define SCAVTRAP_HPP
-#include "ClapTrap.hpp"
 
-class ScavTrap: public ClapTrap
+#include "FragTrap.hpp"
+#include "ScavTrap.hpp"
+
+class DiamondTrap : public FragTrap, public ScavTrap 
 {
 private:
-    //std:: string name;
+    std::string name;
 public:
-    
-    ScavTrap(std::string name);
-    ScavTrap();
-    ScavTrap(const ScavTrap &a);
-    void guardGate();
-    ~ScavTrap();
+    DiamondTrap(/* args */);
+     DiamondTrap(std::string name);
+    ~DiamondTrap();
+    void attack(const std::string& target)
+    {
+        ScavTrap::attack(target);
+    }
+    void whoAmI();
 };
 
-#endif
+

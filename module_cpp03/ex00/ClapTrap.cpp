@@ -6,7 +6,7 @@
 /*   By: ael-oual <ael-oual@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 07:26:35 by ael-oual          #+#    #+#             */
-/*   Updated: 2022/10/12 08:13:09 by ael-oual         ###   ########.fr       */
+/*   Updated: 2022/10/13 19:06:16 by ael-oual         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,10 +39,25 @@ std::cout << "ClapTrap" << name << "repair" <<  std:: endl;
 
 ClapTrap::ClapTrap()
 {
+    
     std::cout << "default constructor " << std:: endl;
+    name = "default";
+    Hit_points = 10;
+    Energy_point = 10;
+    Attack_damage = 0;
 }
 
 ClapTrap::~ClapTrap()
 {
     std::cout << "destructor called " << std:: endl;
+}
+
+ClapTrap& ClapTrap:: operator =(const ClapTrap& t) // assignement
+{
+    std::cout << "Assignment operator called" << name << std :: endl;
+    this->name = t.name;
+    this->Hit_points = t.Hit_points;
+    this->Energy_point = t.Energy_point;
+    this->Attack_damage = t.Attack_damage;
+    return *this;
 }

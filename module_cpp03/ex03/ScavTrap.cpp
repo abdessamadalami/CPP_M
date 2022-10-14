@@ -1,34 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.cpp                                       :+:      :+:    :+:   */
+/*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ael-oual <ael-oual@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/12 11:30:33 by ael-oual          #+#    #+#             */
-/*   Updated: 2022/10/13 19:10:18 by ael-oual         ###   ########.fr       */
+/*   Created: 2022/10/12 08:36:46 by ael-oual          #+#    #+#             */
+/*   Updated: 2022/10/12 16:07:16 by ael-oual         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "FragTrap.hpp"
+#include "ScavTrap.hpp"
 
-FragTrap::FragTrap(std::string name):ClapTrap(name, 100,100,30) //! mablanxch
+ScavTrap :: ScavTrap(std::string Name):ClapTrap(Name)
 {
-    std:: cout << "FragTrap constructor " << std::endl;
+     std::cout <<  "contructor  ScavTrap  " << std::endl;
 }
 
-FragTrap::~FragTrap()
+ScavTrap::ScavTrap()
 {
-    std:: cout << "FragTrap destructor " << std::endl;
+   std::cout <<  "default contructor ScavTrap " << std::endl;
 }
 
-FragTrap::FragTrap()
+ScavTrap::~ScavTrap()
 {
-    std:: cout << "FragTrap default constructor " << std::endl;
+    std:: cout << "destructor ScavTrap " << std::endl;
 }
 
-
-void FragTrap ::highFivesGuys()
+void ScavTrap:: guardGate()
 {
-    std:: cout << " high fives " << std::endl;
+    std :: cout << "this" << name << "now in Gate keeper mode" << std::endl;
 }
+
