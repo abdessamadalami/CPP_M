@@ -6,7 +6,7 @@
 /*   By: ael-oual <ael-oual@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 07:26:55 by ael-oual          #+#    #+#             */
-/*   Updated: 2022/10/12 08:00:12 by ael-oual         ###   ########.fr       */
+/*   Updated: 2022/10/15 21:03:22 by ael-oual         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ public:
     void attack(const std::string& target);
     void takeDamage(unsigned int amount);
     void beRepaired(unsigned int amount);
+    ClapTrap& operator =(const ClapTrap& t);
+    ClapTrap (const ClapTrap &a);
     ~ClapTrap();
 };
 

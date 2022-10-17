@@ -6,7 +6,7 @@
 #    By: ael-oual <ael-oual@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/12 08:07:08 by ael-oual          #+#    #+#              #
-#    Updated: 2022/10/14 16:22:59 by ael-oual         ###   ########.fr        #
+#    Updated: 2022/10/15 19:38:23 by ael-oual         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,6 +16,8 @@ NAME = DiamondTrap
 all : $(NAME)
 $(NAME) : $(OBJ)
 	$(CXX) $(FLAGS) $(SRC) -o $(NAME)
+clean :
+	rm -f $(NAME)
 fclean :
 	rm -f $(NAME)
 re : fclean all

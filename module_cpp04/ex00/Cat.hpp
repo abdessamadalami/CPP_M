@@ -1,28 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ael-oual <ael-oual@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/12 08:51:23 by ael-oual          #+#    #+#             */
-/*   Updated: 2022/10/15 18:31:25 by ael-oual         ###   ########.fr       */
+/*   Created: 2022/10/17 12:06:54 by ael-oual          #+#    #+#             */
+/*   Updated: 2022/10/17 13:29:45 by ael-oual         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "DiamondTrap.hpp"
+#ifndef CAT_HPP
+#define CAT_HPP
 
-//class FragTrap : public  ClapTrap
-//class ScavTrap: public ClapTrap
-int main()
+#include <string>
+#include "Animal.hpp"
+
+class Cat : public Animal
 {
-   // ClapTrap a("alami");
-     ScavTrap s("A");
-     s.attack("B");
-   // s.guardGate();
-    FragTrap a("azziiz");
-    a.attack("D");
-     //DiamondTrap c("almai");
-     //c.attack("abdess");
-    
-}
+    public:
+        Cat();
+        Cat& operator=(const Cat &t);
+        ~Cat();
+        Cat (const Cat &a);
+        void makeSound();
+        std::string getType();
+};
+
+#endif

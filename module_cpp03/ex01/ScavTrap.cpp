@@ -6,7 +6,7 @@
 /*   By: ael-oual <ael-oual@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 08:36:46 by ael-oual          #+#    #+#             */
-/*   Updated: 2022/10/14 19:06:00 by ael-oual         ###   ########.fr       */
+/*   Updated: 2022/10/15 19:30:19 by ael-oual         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,9 @@ ScavTrap :: ScavTrap(std::string Name):ClapTrap(Name, 100, 50, 20)
 ScavTrap::ScavTrap()
 {
    std::cout <<  "default contructor ScavTrap " << std::endl;
+    Hit_points = 100;
+    Energy_point = 50;
+    Attack_damage = 20;
 }
 
 ScavTrap::~ScavTrap()

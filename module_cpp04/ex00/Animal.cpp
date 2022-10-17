@@ -1,28 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Animal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ael-oual <ael-oual@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/12 08:51:23 by ael-oual          #+#    #+#             */
-/*   Updated: 2022/10/15 18:31:25 by ael-oual         ###   ########.fr       */
+/*   Created: 2022/10/17 11:52:31 by ael-oual          #+#    #+#             */
+/*   Updated: 2022/10/17 13:36:48 by ael-oual         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "DiamondTrap.hpp"
+#include"Animal.hpp"
 
-//class FragTrap : public  ClapTrap
-//class ScavTrap: public ClapTrap
-int main()
+
+Animal::Animal(/* args */)
 {
-   // ClapTrap a("alami");
-     ScavTrap s("A");
-     s.attack("B");
-   // s.guardGate();
-    FragTrap a("azziiz");
-    a.attack("D");
-     //DiamondTrap c("almai");
-     //c.attack("abdess");
-    
+   std:: cout << "animal default constructor called \n";
+}
+
+Animal::~Animal()
+{
+   std:: cout << "Animal destructor called \n";
+
+}
+
+std::string Animal:: getType()
+{
+   return type;
+}
+
+Animal& Animal:: operator=(const Animal &t)
+{
+   std:: cout << "assignment operator called \n";
+    this->type = t.type;
+    return *this;
 }

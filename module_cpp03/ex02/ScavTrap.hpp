@@ -6,7 +6,7 @@
 /*   By: ael-oual <ael-oual@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 08:35:52 by ael-oual          #+#    #+#             */
-/*   Updated: 2022/10/14 16:14:39 by ael-oual         ###   ########.fr       */
+/*   Updated: 2022/10/15 19:31:31 by ael-oual         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ public:
     ScavTrap(const ScavTrap &a);
     void guardGate();
     ~ScavTrap();
+    void attack(const std::string& target);
+    ScavTrap& operator= (const ScavTrap &t);
 };
 
 #endif

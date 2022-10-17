@@ -5,24 +5,24 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ael-oual <ael-oual@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/12 08:51:23 by ael-oual          #+#    #+#             */
-/*   Updated: 2022/10/15 18:31:25 by ael-oual         ###   ########.fr       */
+/*   Created: 2022/10/17 12:31:33 by ael-oual          #+#    #+#             */
+/*   Updated: 2022/10/17 13:40:03 by ael-oual         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "DiamondTrap.hpp"
+#include "Dog.hpp"
+#include "Cat.hpp"
 
-//class FragTrap : public  ClapTrap
-//class ScavTrap: public ClapTrap
 int main()
-{
-   // ClapTrap a("alami");
-     ScavTrap s("A");
-     s.attack("B");
-   // s.guardGate();
-    FragTrap a("azziiz");
-    a.attack("D");
-     //DiamondTrap c("almai");
-     //c.attack("abdess");
-    
+ {
+Animal* meta = new Animal();
+Animal* j = new Dog();
+Animal* i = new Cat();
+
+ std::cout << j->getType() << " " << std::endl;
+ std::cout << i->getType() << " " << std::endl;
+// i->makeSound(); //will output the cat sound!
+// j->makeSound();
+// meta->makeSound();
+return 0;
 }
