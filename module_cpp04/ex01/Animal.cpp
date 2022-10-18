@@ -6,7 +6,7 @@
 /*   By: ael-oual <ael-oual@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 11:52:31 by ael-oual          #+#    #+#             */
-/*   Updated: 2022/10/17 16:51:20 by ael-oual         ###   ########.fr       */
+/*   Updated: 2022/10/18 10:42:18 by ael-oual         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,17 @@ std::string Animal:: getType()const
 
 Animal& Animal:: operator=(const Animal &t)
 {
-   std:: cout << "assignment operator called \n";
+   std:: cout << "assignment Animal operator called \n";
     this->type = t.type;
     return *this;
+}
+
+
+Animal::Animal(const Animal& a)
+{
+ std:: cout << "copy Animal operator called _" << a.type <<"_\n" ;
+   
+    this->type = a.type;
 }
 
 void Animal::makeSound()const

@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ael-oual <ael-oual@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/17 12:06:54 by ael-oual          #+#    #+#             */
-/*   Updated: 2022/10/17 16:46:23 by ael-oual         ###   ########.fr       */
+/*   Created: 2022/10/17 17:29:42 by ael-oual          #+#    #+#             */
+/*   Updated: 2022/10/18 12:00:52 by ael-oual         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-#define CAT_HPP
-
+#ifndef BRAIN_HPP
+#define BRAIN_HPP
 #include <string>
-#include "Animal.hpp"
+#include <iostream>
 
-class Cat : public Animal
+class Brain
 {
-    public:
-        Cat();
-        Cat& operator=(const Cat &t);
-        ~Cat();
-        Cat (const Cat &a);
-        void makeSound() const;
-        std::string getType();
+private:
+    std::string ideas[100];
+public:
+    
+    Brain(/* args */);
+    Brain(const Brain& a);
+    Brain& operator=(const Brain &t);
+    ~Brain();
 };
 
 #endif
