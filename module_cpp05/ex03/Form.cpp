@@ -6,7 +6,7 @@
 /*   By: ael-oual <ael-oual@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 14:25:24 by sultan            #+#    #+#             */
-/*   Updated: 2022/10/21 11:34:54 by ael-oual         ###   ########.fr       */
+/*   Updated: 2022/10/21 18:31:48 by ael-oual         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,12 @@
 
 Form:: Form(/* args */):name("default"), index(-1) , grade_req_to_sign (-1),grade_req_to_execut(-1)
 {
-    std::cout << "defualt constructor called " << std::endl;
+    std::cout << this->name << " Form defualt constructor called " << std::endl;
 }
 
 Form:: Form(const std::string n, bool index, const int s, const int e) : name(n), index(index), grade_req_to_sign(s), grade_req_to_execut(e)
 {
-    std::cout << "constructor Form called " << std::endl;
+    std::cout << this-> name << " Form constructor called " << std::endl;
 }
 
 std:: string Form:: get_name() const
@@ -56,12 +56,12 @@ void Form:: beSigned( Bureaucrat A)
         this->index = false;
     }
 }
-// void execute(Bureaucrat const & executor)
-// {
+void execute(Bureaucrat const & executor)
+{
     
-// }
+}
 
 Form::~Form()
 {
-    std::cout << "Form destructor called " << std::endl;
+    std::cout << this -> name<< " Form destructor called " << std::endl;
 }

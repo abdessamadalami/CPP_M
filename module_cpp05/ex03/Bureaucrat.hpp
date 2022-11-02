@@ -6,7 +6,7 @@
 /*   By: ael-oual <ael-oual@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 07:07:07 by ael-oual          #+#    #+#             */
-/*   Updated: 2022/10/25 14:50:58 by ael-oual         ###   ########.fr       */
+/*   Updated: 2022/10/20 14:05:40 by ael-oual         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ class Bureaucrat
     private:
         const std:: string name;
         int grade;
-        Form f[8];
     public:
         Bureaucrat(/* args */);
         Bureaucrat(std::string name, int grade);   

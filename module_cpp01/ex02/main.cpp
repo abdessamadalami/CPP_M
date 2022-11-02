@@ -6,7 +6,7 @@
 /*   By: ael-oual <ael-oual@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 13:08:31 by ael-oual          #+#    #+#             */
-/*   Updated: 2022/10/02 16:53:26 by ael-oual         ###   ########.fr       */
+/*   Updated: 2022/10/26 21:21:08 by ael-oual         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int main()
     std:: string &stringREF = str ;
  
     std:: cout << "string address " << &str<< std::endl;
-    std:: cout << "stringPTR address " << stringPTR << std::endl;
+    std:: cout << "stringPTR address " << &stringPTR << std::endl;
     std:: cout << "string stringREF " << &stringREF << std::endl;
    // std :: cout <<"string ref " << stringREF << std::endl;
 

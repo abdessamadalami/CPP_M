@@ -1,0 +1,236 @@
+{
+  "document": {
+    "id": "doc",
+    "name": "New Document",
+    "version": 15.5,
+    "pages": {
+      "page": {
+        "id": "page",
+        "name": "Page 1",
+        "childIndex": 1,
+        "shapes": {
+          "8070a1c2-f482-421f-2716-da070ef47521": {
+            "id": "8070a1c2-f482-421f-2716-da070ef47521",
+            "type": "text",
+            "name": "Text",
+            "parentId": "page",
+            "childIndex": 2,
+            "point": [
+              20.14,
+              -94.47
+            ],
+            "rotation": 0,
+            "text": "casting is unary operator : force data type to anthor  ",
+            "style": {
+              "color": "black",
+              "size": "small",
+              "isFilled": false,
+              "dash": "draw",
+              "scale": 1.9626315789473687,
+              "font": "script",
+              "textAlign": "middle"
+            }
+          },
+          "8f7e4326-81b1-4e58-1042-b5881fe34efd": {
+            "id": "8f7e4326-81b1-4e58-1042-b5881fe34efd",
+            "type": "draw",
+            "name": "Draw",
+            "parentId": "page",
+            "childIndex": 3,
+            "point": [
+              303.35,
+              244.85
+            ],
+            "rotation": 0,
+            "style": {
+              "color": "black",
+              "size": "small",
+              "isFilled": false,
+              "dash": "draw",
+              "scale": 1
+            },
+            "points": [
+              [
+                0,
+                0,
+                0.5
+              ],
+              [
+                0,
+                0,
+                0.5
+              ]
+            ],
+            "isComplete": true
+          },
+          "a4d08d5e-b56a-4e30-1a3d-77a99d74223b": {
+            "id": "a4d08d5e-b56a-4e30-1a3d-77a99d74223b",
+            "type": "draw",
+            "name": "Draw",
+            "parentId": "page",
+            "childIndex": 4,
+            "point": [
+              303.35,
+              244.85
+            ],
+            "rotation": 0,
+            "style": {
+              "color": "black",
+              "size": "small",
+              "isFilled": false,
+              "dash": "draw",
+              "scale": 1
+            },
+            "points": [
+              [
+                0,
+                0,
+                0.5
+              ],
+              [
+                0,
+                0,
+                0.5
+              ]
+            ],
+            "isComplete": true
+          },
+          "0f010dd1-b002-40cd-3fb5-552743118dbd": {
+            "id": "0f010dd1-b002-40cd-3fb5-552743118dbd",
+            "type": "draw",
+            "name": "Draw",
+            "parentId": "page",
+            "childIndex": 5,
+            "point": [
+              308.67,
+              253.73
+            ],
+            "rotation": 0,
+            "style": {
+              "color": "black",
+              "size": "small",
+              "isFilled": false,
+              "dash": "draw",
+              "scale": 1
+            },
+            "points": [
+              [
+                0,
+                0,
+                0.5
+              ],
+              [
+                0,
+                0,
+                0.5
+              ]
+            ],
+            "isComplete": true
+          },
+          "5bf50142-b212-441d-2d44-3d8118554766": {
+            "id": "5bf50142-b212-441d-2d44-3d8118554766",
+            "type": "text",
+            "name": "Text",
+            "parentId": "page",
+            "childIndex": 1,
+            "point": [
+              63.68,
+              -18.86
+            ],
+            "rotation": 0,
+            "text": "1.Static Cast\n2. Dynamic Cast\n3. Const Cast\n4. Reinterpret Cast",
+            "style": {
+              "color": "red",
+              "size": "small",
+              "isFilled": false,
+              "dash": "draw",
+              "scale": 1.6607692307692308,
+              "font": "script",
+              "textAlign": "start"
+            }
+          },
+          "174bf22a-0dbd-4ae6-2276-42bd424f3090": {
+            "id": "174bf22a-0dbd-4ae6-2276-42bd424f3090",
+            "type": "text",
+            "name": "Text",
+            "parentId": "page",
+            "childIndex": 1,
+            "point": [
+              21.68,
+              246.91
+            ],
+            "rotation": 0,
+            "text": "This is the simplest type of cast that can be used. It is a compile-time cast :",
+            "style": {
+              "color": "red",
+              "size": "small",
+              "isFilled": false,
+              "dash": "draw",
+              "scale": 1.6815789473684222,
+              "font": "script"
+            }
+          },
+          "bc1fbf37-07eb-40b4-17da-0f3a8a93ac74": {
+            "id": "bc1fbf37-07eb-40b4-17da-0f3a8a93ac74",
+            "type": "text",
+            "name": "Text",
+            "parentId": "page",
+            "childIndex": 1,
+            "point": [
+              54.16,
+              343.33
+            ],
+            "rotation": 0,
+            "text": "the Conversion operator.",
+            "style": {
+              "color": "cyan",
+              "size": "small",
+              "isFilled": false,
+              "dash": "draw",
+              "scale": 1,
+              "font": "script"
+            }
+          },
+          "26193acb-9f10-41ca-2dc3-41f99d6f3c20": {
+            "id": "26193acb-9f10-41ca-2dc3-41f99d6f3c20",
+            "type": "text",
+            "name": "Text",
+            "parentId": "page",
+            "childIndex": 1,
+            "point": [
+              282.89,
+              315.21
+            ],
+            "rotation": 0,
+            "text": "#include <iostream>\n#include <string>\nusing namespace std;\nclass Int {\n    int x;\n  \npublic:\n    Int(int x_in = 0)\n        : x{ x_in }\n    {\n        cout << \"Conversion Ctor called\" << endl;\n    }\n    operator string()\n    {\n        cout << \"Conversion Operator\" << endl;\n        return to_string(x);\n    }\n};\nint main()\n{\n    Int obj(3);\n    string str = obj;\n    obj = 20;\n    string str2 = static_cast<string>(obj);\n    obj = static_cast<Int>(30);\n    return 0;\n}",
+            "style": {
+              "color": "cyan",
+              "size": "small",
+              "isFilled": false,
+              "dash": "draw",
+              "scale": 0.07655356844300534,
+              "font": "script",
+              "textAlign": "start"
+            }
+          }
+        },
+        "bindings": {}
+      }
+    },
+    "pageStates": {
+      "page": {
+        "id": "page",
+        "selectedIds": [],
+        "camera": {
+          "point": [
+            0,
+            0
+          ],
+          "zoom": 1
+        }
+      }
+    },
+    "assets": {}
+  },
+  "assets": {}
+}
