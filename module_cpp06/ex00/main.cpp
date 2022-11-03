@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sultan <sultan@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ael-oual <ael-oual@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 09:02:27 by ael-oual          #+#    #+#             */
-/*   Updated: 2022/11/02 18:38:24 by sultan           ###   ########.fr       */
+/*   Updated: 2022/11/03 11:37:21 by ael-oual         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,17 +16,21 @@
 
 void check_type_arg(char *ptr)
 {
-    // std:: cout << ptr;
+     std:: cout << ptr;
     std:: string str (ptr);
     
     std::cout << str.length();
-    if (str.length() == 1 && !isdigit(str[0] - '0') )
+    if (str.length() == 1 && (str[0] < '0' && str[0] > '9'))
     {
-        std :: cout << " i am "<< str[0] << '\n';
-        if (!isprint(str[0]))
-            std:: cout << "not printible char \n";
+        if (!isdigit(str[0] - '0'))
+        {
+            if (!isprint(str[0]))
+                std:: cout << "not printible char \n";
+            else
+                std ::cout << "i am char\n";
+        }
         else
-            std ::cout << "i am char\n";
+            std::cout << "is didgit" << isdigit(str[0] - '0');
     }
 }
 
@@ -38,11 +42,12 @@ int main(int ag, char **av)
         return 1;
     }
   //  char c ='\n';
-    std::string a(av[1]);
-    std::cout << isprint(a);
-    std:: cout << "good " << a[0];
+    // av[1][0] = '\n';
+    //  std::string a(av[1]);
+    //  std::cout << isprint(a[0]);
+    // std:: cout << "good " << a[0];
     //std::cout << a[0];
-    // check_type_arg(av[1]);
+     check_type_arg(av[1]);
     
 
     

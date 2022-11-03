@@ -6,7 +6,7 @@
 /*   By: ael-oual <ael-oual@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 07:26:35 by ael-oual          #+#    #+#             */
-/*   Updated: 2022/10/15 21:03:40 by ael-oual         ###   ########.fr       */
+/*   Updated: 2022/11/03 12:10:45 by ael-oual         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ void ClapTrap::takeDamage(unsigned int amount)
 
 void ClapTrap:: beRepaired(unsigned int amount)
 {
+    // zero m3ndoch dm 
 std::cout << "ClapTrap " << name << " repair" << amount << std:: endl;
     Hit_points+=amount;
     Energy_point--;
