@@ -6,7 +6,7 @@
 /*   By: ael-oual <ael-oual@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/04 11:27:14 by ael-oual          #+#    #+#             */
-/*   Updated: 2022/11/05 18:48:38 by ael-oual         ###   ########.fr       */
+/*   Updated: 2022/11/06 21:18:52 by ael-oual         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,38 +26,30 @@ public:
     }
     Array (unsigned int n)
     {
-        N = n;
-        T *a = new T[N]();
-        // for(int i = 0; i < N ; i++)
-        //      std:: cout << "the content of " << a[i] << std::endl;
-        this->array = a;
+        this->N = n;
+        this->array = new T[N]();
+        std::cout << "i am here in constructor\n";
     }
     
      Array<T> (Array<T>&  obj)
     {
         std::cout << "copy constructor " << obj.size() <<std::endl;
-        // *this = obj;
-        exit(0);
-       (void)obj;
+        *this = obj;
+        //exit(0);
+      // (void)obj;
     }
     
-   Array<T>&  operator =(Array<T>  arr_obj)
+   Array<T>&  operator =(Array<T>&  arr_obj)
     {
         std:: cout << "assignemt operator" << arr_obj.size() <<std::endl;
-        exit(0);
-    //    // std::cout << " size " << arr_obj.size() <<std::endl;
-            
-    //     if (this->array != NULL)
-    //     {
-    //         arr_obj->array = new T[N];
-    //         for (size_t i = 0; i < N; i++)
-    //         {
-    //             arr_obj->array = this->array[i]; 
-    //         }
-    //     }
-    //     else
-    //         arr_obj->array = 0; 
-    //     return *this;   
+            this->N = arr_obj.N;
+            this->array = new T[N]();
+            for (int i = 0; i < arr_obj.N; i++)
+            {
+                this->array[i] = arr_obj.array[i];
+                // std::cout << this ->array[i];
+            }
+         return *this;   
     }
 
     T&  operator [](unsigned int position)
@@ -85,17 +77,10 @@ int main()
         u[i] = i << 8;
     for (size_t i = 0; i < 10; i++)
         std::cout << u[i] << std:: endl;
-    try
-    {
-        std:: cout << u[100];
-    }
-    catch(const std::string& s)
-    {
-        std::cout << "exeption " << s ;
-    }
     /// -------------------------------------------------
     Array<int>  a = u;
-
+     for (size_t i = 0; i < 10; i++)
+        std::cout << " i am in main() " << a[i] << std:: endl;
 
 
 
