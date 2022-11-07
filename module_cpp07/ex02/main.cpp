@@ -6,81 +6,41 @@
 /*   By: ael-oual <ael-oual@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/04 11:27:14 by ael-oual          #+#    #+#             */
-/*   Updated: 2022/11/06 21:18:52 by ael-oual         ###   ########.fr       */
+/*   Updated: 2022/11/07 10:19:51 by ael-oual         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include <iostream>
-// #include "Array.hpp"
-template<class T> class Array
-{
-private:
-    int N;
-    T *array;
-public:
-    Array()
-    {
-        T *p;
-        p = NULL;
-    }
-    Array (unsigned int n)
-    {
-        this->N = n;
-        this->array = new T[N]();
-        std::cout << "i am here in constructor\n";
-    }
-    
-     Array<T> (Array<T>&  obj)
-    {
-        std::cout << "copy constructor " << obj.size() <<std::endl;
-        *this = obj;
-        //exit(0);
-      // (void)obj;
-    }
-    
-   Array<T>&  operator =(Array<T>&  arr_obj)
-    {
-        std:: cout << "assignemt operator" << arr_obj.size() <<std::endl;
-            this->N = arr_obj.N;
-            this->array = new T[N]();
-            for (int i = 0; i < arr_obj.N; i++)
-            {
-                this->array[i] = arr_obj.array[i];
-                // std::cout << this ->array[i];
-            }
-         return *this;   
-    }
+ #include "Array.hpp"
 
-    T&  operator [](unsigned int position)
-    {
-        if (position > this->size())
-        {
-            // exit(0);
-            std::string a = "out of range \n";
-           throw (a);
-        }
-        return this->array[position];
-    }
-    
-    unsigned int size()
-    {
-        return this->N;
-    }
-    ~Array(){}
-};
 
 int main()
 {
-    Array<int>u(10);
+    Array<int>array1(10);
     for (size_t i = 0; i < 10; i++)
-        u[i] = i << 8;
-    for (size_t i = 0; i < 10; i++)
-        std::cout << u[i] << std:: endl;
+        array1[i] = i << 8;
+    // try
+    // {
+    //     for (size_t i = 0; i < 10; i++)
+    //     {
+    //         std::cout << u[i] << std:: endl;
+    //         std:: cout << u[100];
+    //     }
+    // }
+    // catch(const std::string& s)
+    // {
+    //     std::cout << "exeption " << s ;
+    // }
     /// -------------------------------------------------
-    Array<int>  a = u;
+    Array<int>  array2(10);
      for (size_t i = 0; i < 10; i++)
-        std::cout << " i am in main() " << a[i] << std:: endl;
+        array2[i] = i << 5;
+    std::cout<< "alami \n";
+    array2 = array1;
+      for (size_t i = 0; i < 10; i++)
+        std::cout << array2[i]  << std::endl;
+
 
 
 
