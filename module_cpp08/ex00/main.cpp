@@ -6,7 +6,7 @@
 /*   By: ael-oual <ael-oual@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 10:27:32 by ael-oual          #+#    #+#             */
-/*   Updated: 2022/11/07 15:09:28 by ael-oual         ###   ########.fr       */
+/*   Updated: 2022/11/08 08:20:59 by ael-oual         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int main()
     std::vector<int> vect(arr, arr + n);
     try
     {
-        easyfind(vect, 10);
+        easyfind(vect, -1);
     }
     catch(std::string e)
     {

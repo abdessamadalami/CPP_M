@@ -6,7 +6,7 @@
 /*   By: ael-oual <ael-oual@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 16:02:38 by ael-oual          #+#    #+#             */
-/*   Updated: 2022/10/20 12:29:06 by ael-oual         ###   ########.fr       */
+/*   Updated: 2022/11/08 15:11:30 by ael-oual         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ Bureaucrat::~Bureaucrat()
 
 Bureaucrat& Bureaucrat::operator=( const Bureaucrat &B)
 { 
+    std::cout << "assingment operator\n";
     this->grade = B.grade;
     return *this;
 }

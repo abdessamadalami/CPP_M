@@ -6,7 +6,7 @@
 /*   By: ael-oual <ael-oual@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 18:17:59 by ael-oual          #+#    #+#             */
-/*   Updated: 2022/09/27 15:12:24 by ael-oual         ###   ########.fr       */
+/*   Updated: 2022/11/08 15:13:24 by ael-oual         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ Fixed::Fixed()
 
 Fixed::Fixed(const Fixed &a)
 {
-    fixed_point = a.fixed_point;
+    this->fixed_point = a.fixed_point;
     std :: cout << " Copy constructor called\n";
 }
  Fixed  Fixed::operator = (const Fixed& t)

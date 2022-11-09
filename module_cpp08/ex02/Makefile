@@ -6,13 +6,13 @@
 #    By: ael-oual <ael-oual@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/07 10:37:40 by ael-oual          #+#    #+#              #
-#    Updated: 2022/11/08 15:48:36 by ael-oual         ###   ########.fr        #
+#    Updated: 2022/11/09 10:55:22 by ael-oual         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC =  main.cpp Span.cpp
+SRC =  main.cpp
 FLAGS = -Wall -Wextra -Werror -std=c++98
-NAME = span
+NAME = stack
 
 all : $(NAME)
 $(NAME) : $(SRC)

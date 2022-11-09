@@ -6,7 +6,7 @@
 /*   By: ael-oual <ael-oual@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 14:26:11 by ael-oual          #+#    #+#             */
-/*   Updated: 2022/11/07 17:11:00 by ael-oual         ###   ########.fr       */
+/*   Updated: 2022/11/08 15:25:14 by ael-oual         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ class Span
         Span();
         Span(unsigned int);
         void addNumber(int nbr);
+        Span(const Span& old_obj);
+        Span operator=(const Span& old_obj);
         int shortestSpan();
         int longestSpan();
         ~Span();
