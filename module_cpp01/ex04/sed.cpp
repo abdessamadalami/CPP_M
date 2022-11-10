@@ -6,7 +6,7 @@
 /*   By: ael-oual <ael-oual@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/24 09:58:14 by ael-oual          #+#    #+#             */
-/*   Updated: 2022/10/03 12:26:16 by ael-oual         ###   ########.fr       */
+/*   Updated: 2022/11/10 08:10:57 by ael-oual         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ file_rep:: file_rep(int ag, char **argv)
     if (ag != 4)
     {
         std:: cerr<< "error argument" << std::endl;
-        exit(0);
+        exit(1);
     }
     file_name = argv[1];
     s1 = argv[2];
@@ -33,13 +33,13 @@ void file_rep::sed_f()
     if(!input)
     {
         std:: cerr<< "error file" << std::endl;
-       return;
+       exit(1);
     }
     while (input)
     {
-        buffer += line;
-        std:: getline(input, line);
-        if(!input.eof())
+        buffer += line; 
+        std:: getline(input, line); 
+        if(!input.eof())// for add \n in the end of line
         {
             line += "\n";
         }
@@ -57,4 +57,5 @@ void file_rep::sed_f()
 
 file_rep::~file_rep()
 {
+    std::cout << "destructor called \n";
 }

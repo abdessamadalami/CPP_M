@@ -6,7 +6,7 @@
 /*   By: ael-oual <ael-oual@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/24 11:29:55 by ael-oual          #+#    #+#             */
-/*   Updated: 2022/10/02 18:41:08 by ael-oual         ###   ########.fr       */
+/*   Updated: 2022/11/10 08:22:57 by ael-oual         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,12 @@ void Harl:: error( void )
 void Harl:: complain( std::string level )
 {
     std:: string ptr[] = {"DEBUG" ,"INFO","WARNING", "ERROR"};
-    void (Harl::*arr[]) (void) = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
+    void (Harl::*arr[]) (void) = { 
+                                    &Harl::debug,
+                                    &Harl::info,
+                                    &Harl::warning,
+                                    &Harl::error
+                                };
     int index = ((level == "DEBUG") * 0 + (level == "INFO") * 1 +  (level == "WARNING") *  2 + (level == "ERROR") * 3);
     if (index == 0 && level != ptr[0])
     {

@@ -6,7 +6,7 @@
 /*   By: ael-oual <ael-oual@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/24 10:34:53 by ael-oual          #+#    #+#             */
-/*   Updated: 2022/10/02 18:38:16 by ael-oual         ###   ########.fr       */
+/*   Updated: 2022/11/10 08:24:30 by ael-oual         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,5 +16,8 @@ int main()
 {
     Harl harl;
     harl.complain("DEBddUG");
+     harl.complain("INFO");
+    // harl.complain("WARNING");
+    // harl.complain("ERROR");
     // DEBUG ,INFO,WARNING, ERROR     
 }
