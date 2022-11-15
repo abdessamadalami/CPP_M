@@ -6,7 +6,7 @@
 /*   By: ael-oual <ael-oual@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 17:28:31 by ael-oual          #+#    #+#             */
-/*   Updated: 2022/10/12 13:43:02 by ael-oual         ###   ########.fr       */
+/*   Updated: 2022/11/13 10:29:05 by ael-oual         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,8 @@ public:
     Fixed(const float F);
     int getRawBits() const;
     void setRawBits( int const raw );
-    Fixed  operator = (const Fixed& t);
+    Fixed&  operator = (const Fixed& t); //   support chaining
     float toFloat( void ) const;
     int toInt( void ) const;
 };
 std ::ostream& operator<<(std ::ostream& COUT,const Fixed &a);
-
-
-
-// Fixed:: Fixed(const float F)
-//  {}

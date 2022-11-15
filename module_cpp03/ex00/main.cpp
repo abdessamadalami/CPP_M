@@ -6,7 +6,7 @@
 /*   By: ael-oual <ael-oual@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 08:05:57 by ael-oual          #+#    #+#             */
-/*   Updated: 2022/10/15 20:27:39 by ael-oual         ###   ########.fr       */
+/*   Updated: 2022/11/14 15:22:01 by ael-oual         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,18 @@
 
 int main()
 {
-   ClapTrap a(NULL);
-    a.attack("B");
+    ClapTrap a("alami");
     a.beRepaired(10);
-    
-//    std::cout <<" a" << std::endl;
-//    std:: string a = NULL;
+    a.attack("B");
+    a.attack("B");
+    a.attack("B");
+    a.attack("B");
+    a.attack("B");
+    a.attack("B");
+    a.attack("B");
+    a.attack("B");
+    a.attack("B");
+    a.attack("B");
+    a.attack("B");
+
 }

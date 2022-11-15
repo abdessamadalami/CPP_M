@@ -6,7 +6,7 @@
 /*   By: ael-oual <ael-oual@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 17:29:20 by ael-oual          #+#    #+#             */
-/*   Updated: 2022/09/26 18:08:54 by ael-oual         ###   ########.fr       */
+/*   Updated: 2022/11/12 08:44:13 by ael-oual         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 int main( void )
 {
     Fixed a;
-    Fixed b( a );
+    Fixed b(a);
     Fixed c;
     c = b;
     std::cout << a.getRawBits() << std::endl;

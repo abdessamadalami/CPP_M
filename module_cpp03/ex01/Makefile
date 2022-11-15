@@ -6,7 +6,7 @@
 #    By: ael-oual <ael-oual@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/12 08:07:08 by ael-oual          #+#    #+#              #
-#    Updated: 2022/10/15 19:37:55 by ael-oual         ###   ########.fr        #
+#    Updated: 2022/11/12 16:11:39 by ael-oual         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,9 @@ all : $(NAME)
 $(NAME) : $(OBJ)
 	$(CXX) $(FLAGS) $(SRC) -o $(NAME)
 clean :
+	../../../../clean
 	rm -f $(NAME)
 fclean :
+	../../../../clean
 	rm -f $(NAME)
 re : fclean all

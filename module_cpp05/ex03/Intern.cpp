@@ -6,7 +6,7 @@
 /*   By: ael-oual <ael-oual@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 10:20:08 by ael-oual          #+#    #+#             */
-/*   Updated: 2022/10/21 18:24:52 by ael-oual         ###   ########.fr       */
+/*   Updated: 2022/11/13 11:29:20 by ael-oual         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,12 @@ Intern:: Intern()
 }
 Form* Intern :: makeForm(std:: string name, std:: string target)
 {
-    
+    //   std:: string ptr[] = {"PresidentialPardonForm" ,"RobotomyRequestForm","ShrubberyCreationForm"};
+    // void (*arr[]) (target) = { 
+    //                                 &PresidentialPardonForm::PresidentialPardonForm(target),
+    //                                 &RobotomyRequestForm::RobotomyRequestForm(target),
+    //                                 &ShrubberyCreationForm::ShrubberyCreationForm(target),
+                                // };
     int index = ((name == "PresidentialPardonForm") * 0 + (name == "RobotomyRequestForm") * 1 +  (name == "ShrubberyCreationForm") *  2 );
     
     switch (index)

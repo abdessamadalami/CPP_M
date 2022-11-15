@@ -6,7 +6,7 @@
 #    By: ael-oual <ael-oual@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/20 14:16:23 by ael-oual          #+#    #+#              #
-#    Updated: 2022/10/03 12:09:54 by ael-oual         ###   ########.fr        #
+#    Updated: 2022/11/11 10:13:43 by ael-oual         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ FLAGS = -Wall -Wextra -Werror -std=c++98
 CC = c++
 NAME = brain
 all : $(NAME)
-$(NAME) : $(OBJ)
+$(NAME) :$(SRC)
 	$(CXX) $(FLAGS) $(SRC) -o $(NAME)
 clean :
 	rm -f $(NAME)

@@ -1,0 +1,167 @@
+{
+  "document": {
+    "id": "doc",
+    "name": "New Document",
+    "version": 15.5,
+    "pages": {
+      "page": {
+        "id": "page",
+        "name": "Page 1",
+        "childIndex": 1,
+        "shapes": {
+          "e47b577f-9f3b-48aa-0722-71cbfab6a768": {
+            "id": "e47b577f-9f3b-48aa-0722-71cbfab6a768",
+            "type": "text",
+            "name": "Text",
+            "parentId": "page",
+            "childIndex": 1,
+            "point": [
+              37.64,
+              68.41
+            ],
+            "rotation": 0,
+            "text": "class Base {\npublic:\n              virtual arbitrary_return_type virt0( /*...arbitrary params...*/ );\n              virtual arbitrary_return_type virt1( /*...arbitrary params...*/ );\n              virtual arbitrary_return_type virt2( /*...arbitrary params...*/ );\n              virtual arbitrary_return_type virt3( /*...arbitrary params...*/ );\n              virtual arbitrary_return_type virt4( /*...arbitrary params...*/ );\n              // ...\n};",
+            "style": {
+              "color": "black",
+              "size": "small",
+              "isFilled": false,
+              "dash": "draw",
+              "scale": 1,
+              "font": "script",
+              "textAlign": "start"
+            }
+          },
+          "67b1b4f3-78a2-4138-3310-85e74a9da743": {
+            "id": "67b1b4f3-78a2-4138-3310-85e74a9da743",
+            "type": "rectangle",
+            "name": "Rectangle",
+            "parentId": "page",
+            "childIndex": 2,
+            "point": [
+              877.23,
+              93.88
+            ],
+            "size": [
+              252.76,
+              276.8
+            ],
+            "rotation": 0,
+            "style": {
+              "color": "black",
+              "size": "small",
+              "isFilled": false,
+              "dash": "draw",
+              "scale": 1
+            },
+            "label": "",
+            "labelPoint": [
+              0.5,
+              0.5
+            ]
+          },
+          "2d1a930f-8d2d-4679-3508-0fff5462d09f": {
+            "id": "2d1a930f-8d2d-4679-3508-0fff5462d09f",
+            "type": "text",
+            "name": "Text",
+            "parentId": "page",
+            "childIndex": 3,
+            "point": [
+              891.02,
+              380.18
+            ],
+            "rotation": 0,
+            "text": "static v_table(hidden) ",
+            "style": {
+              "color": "black",
+              "size": "small",
+              "isFilled": false,
+              "dash": "draw",
+              "scale": 1,
+              "font": "script",
+              "textAlign": "middle"
+            }
+          },
+          "f3e02a01-9a87-4367-1fa7-5ef119f36c1a": {
+            "id": "f3e02a01-9a87-4367-1fa7-5ef119f36c1a",
+            "type": "text",
+            "name": "Text",
+            "parentId": "page",
+            "childIndex": 1,
+            "point": [
+              902.99,
+              107.58
+            ],
+            "rotation": 0,
+            "text": "&Base::virt0, \n&Base::virt1,\n &Base::virt2,\n &Base::virt3,\n &Base::virt4",
+            "style": {
+              "color": "black",
+              "size": "small",
+              "isFilled": false,
+              "dash": "draw",
+              "scale": 1,
+              "font": "script"
+            }
+          },
+          "e18f03b6-63ae-481c-0b4d-98e2beb345b1": {
+            "id": "e18f03b6-63ae-481c-0b4d-98e2beb345b1",
+            "type": "text",
+            "name": "Text",
+            "parentId": "page",
+            "childIndex": 1,
+            "point": [
+              261.5,
+              473
+            ],
+            "rotation": 0,
+            "text": "In C++, dynamic binding happens when a virtual function is called through a reference (or a pointer) to a base class.",
+            "style": {
+              "color": "black",
+              "size": "small",
+              "isFilled": false,
+              "dash": "draw",
+              "scale": 1,
+              "font": "script"
+            }
+          },
+          "022f228a-dc57-4321-0c08-a8e6cb9e8373": {
+            "id": "022f228a-dc57-4321-0c08-a8e6cb9e8373",
+            "type": "text",
+            "name": "Text",
+            "parentId": "page",
+            "childIndex": 1,
+            "point": [
+              246.25,
+              430.38
+            ],
+            "rotation": 0,
+            "text": "Virtual functions cannot be static",
+            "style": {
+              "color": "black",
+              "size": "small",
+              "isFilled": false,
+              "dash": "draw",
+              "scale": 1,
+              "font": "script"
+            }
+          }
+        },
+        "bindings": {}
+      }
+    },
+    "pageStates": {
+      "page": {
+        "id": "page",
+        "selectedIds": [],
+        "camera": {
+          "point": [
+            0,
+            0
+          ],
+          "zoom": 1
+        }
+      }
+    },
+    "assets": {}
+  },
+  "assets": {}
+}

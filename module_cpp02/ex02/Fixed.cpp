@@ -6,7 +6,7 @@
 /*   By: ael-oual <ael-oual@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 18:17:59 by ael-oual          #+#    #+#             */
-/*   Updated: 2022/09/30 16:35:34 by ael-oual         ###   ########.fr       */
+/*   Updated: 2022/11/13 12:16:05 by ael-oual         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,20 +16,15 @@
 //! Orthodox Canonical Form
 
 Fixed:: Fixed(const float F)
- {
-    float A = F;
-    float v = 1 << 8;
-    A = A * v;
-    std:: cout << "A " << A  << " f" << F << " Float constructor called " << std::endl;
-    fixed_point = roundf(A);
- }
+{
+    std:: cout << " Float constructor called " << std::endl;
+    fixed_point = roundf( F * (1  << shift));
+}
 
 Fixed :: Fixed(const int a)
 {
-    int A = a;
-    A = A << 8;
     std :: cout <<  " Int constructor called \n" ;
-    fixed_point = A;
+    this-> fixed_point = a << shift;
 }
 
 Fixed::Fixed()
@@ -40,24 +35,10 @@ Fixed::Fixed()
 
 Fixed::Fixed(const Fixed &a)
 {
-    fixed_point = a.fixed_point;
+    this->fixed_point = a.fixed_point;
     std :: cout << " Copy constructor called\n";
 }
 
-Fixed  Fixed::operator = (const Fixed& t)
-{
-    this->fixed_point = t.fixed_point;
-    std:: cout << "Assignment operator called " << std::endl;
-    return *this;
-}
-    
-Fixed::~Fixed()
-{
-    std :: cout << "Destructor called\n";
-}
-
-//! membre functions
- 
 int Fixed:: getRawBits(void) const
 {
     return fixed_point;
@@ -65,20 +46,24 @@ int Fixed:: getRawBits(void) const
 
 void Fixed:: setRawBits( int const raw )
 {
-    fixed_point = raw;
+    this->fixed_point = raw;
 }
 
 float Fixed:: toFloat( void ) const
 {
-    float e = fixed_point;
-    // std :: cout << e << std::endl;
-    e = e / (1 << 8);
-    return e;
+    return (fixed_point / (1 << shift));
 }
 
 int Fixed:: toInt( void ) const
 {
-    return toFloat() ;
+    return toFloat();
+}
+
+Fixed  Fixed::operator= (const Fixed& t)
+{
+    this->fixed_point = t.fixed_point;
+    std:: cout << "Assignment operator called " << std::endl;
+    return *this;
 }
 
 //! membre functions operators << < > >= <=
@@ -91,77 +76,78 @@ std ::ostream& operator<<(std ::ostream& COUT, const Fixed &a)
     return (COUT);
 }
 
-bool  Fixed:: operator<(const Fixed &a)
+bool  Fixed:: operator<(const Fixed &a)const
 {
     return (this->fixed_point < a.fixed_point);
 }
 
-bool  Fixed:: operator>(const Fixed &a)
+bool  Fixed:: operator>(const Fixed &a)const
 {
     return (this->fixed_point > a.fixed_point);
 }
 
-bool  Fixed:: operator>=(const Fixed &a)
+bool  Fixed:: operator>=(const Fixed &a)const
 {
     return (this->fixed_point >= a.fixed_point);
 }
 
-bool  Fixed:: operator<=(const Fixed &a)
+bool  Fixed:: operator<=(const Fixed &a)const
 {
     return (this->fixed_point >= a.fixed_point);
 }
-//! membre functions operators != == =+
 
-bool  Fixed:: operator==(const Fixed &a)
+/* !* membre functions operators != == =+*/
+
+bool  Fixed:: operator==(const Fixed &a)const
 {
     return (this->fixed_point == a.fixed_point);
 }
-bool  Fixed:: operator!=(const Fixed &a)
+
+bool  Fixed:: operator!=(const Fixed &a)const
 {
     return (this->fixed_point != a.fixed_point);
 }
 
 //! membre functions operators + - * /
 
-Fixed  Fixed:: operator+(const Fixed &a)
+Fixed  Fixed:: operator+(const Fixed &l_obj)const
 {
     Fixed fixed;
-    fixed = this->fixed_point + a.fixed_point;
-    
+    std::cout << l_obj;
+    fixed.fixed_point = this->fixed_point + l_obj.fixed_point;
     return (fixed);
 }
 
-Fixed  Fixed:: operator-(const Fixed &a)
+Fixed  Fixed:: operator-(const Fixed &l_obj)const
 {
     Fixed fixed;
-    fixed = this->fixed_point - a.fixed_point;
+    fixed.fixed_point = this->fixed_point - l_obj.fixed_point;
     return fixed;
 }
 
-Fixed  Fixed:: operator*(const Fixed &a)
+Fixed  Fixed:: operator*(const Fixed &l_obj)const
 {
     Fixed fixed;
-    fixed.fixed_point = ((this->fixed_point) * (a.fixed_point)) / (1 << shift );
+    fixed.fixed_point = (((this->fixed_point)) * (l_obj.fixed_point)) >> shift;
     return (fixed);
 }
 
-Fixed  Fixed:: operator/(const Fixed &a)
+Fixed  Fixed:: operator/(const Fixed &l_obj)const
 {
-    int fixed;
-    fixed = (this->fixed_point / a.fixed_point) / (1 << 8) ;
-    return (this->fixed_point);
+    Fixed fixed;
+    fixed.fixed_point = (this->fixed_point / l_obj.fixed_point) << shift;
+    return (fixed);
 }
 
 //! membre functions operators a++ ++a a-- --a
 
-Fixed Fixed:: operator++() 
+Fixed Fixed:: operator++() // prefix
 {
-    Fixed temp;
     this->fixed_point++;
     return (*this);
 }
 
-Fixed  Fixed:: operator++(int)
+Fixed  Fixed:: operator++(int) //postfix int just a signature
 {
     Fixed temp;
     temp.fixed_point = this->fixed_point;
@@ -171,14 +157,16 @@ Fixed  Fixed:: operator++(int)
 
 Fixed Fixed:: operator--() 
 {
-    Fixed temp;
+     std::cout << "this is with out int  " <<  this << std::endl;
     this->fixed_point--;
+   
     return (*this);
 }
 
 Fixed  Fixed:: operator--(int)
 {
     Fixed temp;
+     std::cout << "this is " <<  this << std::endl;
     temp.fixed_point = this->fixed_point;
     this->fixed_point--;
     return temp;
@@ -186,31 +174,35 @@ Fixed  Fixed:: operator--(int)
 
 //! membre functions operators min and max with const and normal 
 
-Fixed Fixed:: min(const Fixed &a, const Fixed &b)
+const Fixed& Fixed:: min(const Fixed &a, const Fixed &b)
 {
     if (a.fixed_point < b.fixed_point)
         return a;
     return b;
 }
 
-Fixed Fixed:: max(const Fixed &a, const Fixed &b)
+const Fixed& Fixed:: max(const Fixed &a, const Fixed &b)
 {
     if (a.fixed_point > b.fixed_point)
         return a;
     return b;
 }
 
-Fixed Fixed:: min(Fixed &a, Fixed &b)
+Fixed& Fixed:: min(Fixed &a, Fixed &b)
 {
-    std :: cout << fixed_point;
     if (a.fixed_point < b.fixed_point)
         return a;
     return b;
 }
 
-Fixed Fixed:: max(Fixed &a, Fixed &b)
+Fixed& Fixed:: max(Fixed &a, Fixed &b)
 {
     if (a.fixed_point > b.fixed_point)
         return a;
     return b;
+}
+
+Fixed::~Fixed()
+{
+    std :: cout << "Destructor called\n";
 }

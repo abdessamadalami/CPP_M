@@ -6,7 +6,7 @@
 /*   By: ael-oual <ael-oual@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 08:51:23 by ael-oual          #+#    #+#             */
-/*   Updated: 2022/10/15 15:28:25 by ael-oual         ###   ########.fr       */
+/*   Updated: 2022/11/14 18:26:46 by ael-oual         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 int main()
 {
     // ClapTrap a("alami");
-     ScavTrap s("al ouali alami");
+    ScavTrap s("al ouali alami");
     s.attack("abdessmad");
    // s.guardGate();
   //  FragTrap a("abessamd");

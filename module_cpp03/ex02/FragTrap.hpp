@@ -6,7 +6,7 @@
 /*   By: ael-oual <ael-oual@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 11:31:19 by ael-oual          #+#    #+#             */
-/*   Updated: 2022/10/15 19:24:42 by ael-oual         ###   ########.fr       */
+/*   Updated: 2022/11/14 13:18:50 by ael-oual         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,12 @@ class FragTrap : public  ClapTrap
 {
 
 public:
-    FragTrap(std:: string name);
-    void highFivesGuys();
-    FragTrap(const FragTrap &a);
-    FragTrap& operator=(const FragTrap &t);
-    ~FragTrap();
     FragTrap();
-    void attack(const std::string& target);
+    FragTrap(std:: string name);
+    FragTrap(const FragTrap& old_obj);
+    FragTrap& operator=(const FragTrap &t);
+    void highFivesGuys();
+    ~FragTrap();
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: ael-oual <ael-oual@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 13:08:31 by ael-oual          #+#    #+#             */
-/*   Updated: 2022/10/26 21:21:08 by ael-oual         ###   ########.fr       */
+/*   Updated: 2022/11/11 10:13:25 by ael-oual         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <string>
 
 
-int main()
+int main() 
 {
     std:: string str;
     std:: string *stringPTR;
@@ -22,9 +22,9 @@ int main()
     str = "HI THIS IS BRAIN";
     stringPTR = &str;
     std:: string &stringREF = str ;
- 
+
     std:: cout << "string address " << &str<< std::endl;
-    std:: cout << "stringPTR address " << &stringPTR << std::endl;
+    std:: cout << "stringPTR address " << stringPTR << std::endl;
     std:: cout << "string stringREF " << &stringREF << std::endl;
    // std :: cout <<"string ref " << stringREF << std::endl;
 

@@ -6,7 +6,7 @@
 /*   By: ael-oual <ael-oual@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 15:46:36 by ael-oual          #+#    #+#             */
-/*   Updated: 2022/10/02 18:12:55 by ael-oual         ###   ########.fr       */
+/*   Updated: 2022/11/11 09:52:44 by ael-oual         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,8 @@ Zombie:: ~Zombie()
 
  Zombie:: Zombie(std:: string Name)
 {
- //std::cout << "constructor \n";
     name = Name; 
-    announs();
+  std::cout << "constructor " << name << std::endl ;
 }
 
 Zombie:: Zombie()

@@ -6,7 +6,7 @@
 /*   By: ael-oual <ael-oual@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 14:25:24 by sultan            #+#    #+#             */
-/*   Updated: 2022/10/20 15:49:38 by ael-oual         ###   ########.fr       */
+/*   Updated: 2022/11/11 11:17:45 by ael-oual         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 #include <iostream>
 
-Form:: Form(/* args */):name("default"), index(-1) , grade_req_to_sign (-1),grade_req_to_execut(-1)
+Form:: Form():name("default"), index(-1) , grade_req_to_sign (-1),grade_req_to_execut(-1)
 {
     std::cout << "defualt constructor called " << std::endl;
 }

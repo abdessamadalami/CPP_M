@@ -6,7 +6,7 @@
 #    By: ael-oual <ael-oual@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/20 14:16:23 by ael-oual          #+#    #+#              #
-#    Updated: 2022/10/03 12:17:58 by ael-oual         ###   ########.fr        #
+#    Updated: 2022/11/11 10:08:50 by ael-oual         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ FLAGS = -Wall -Wextra -Werror -std=c++98
 NAME = Zombie
 
 all : $(NAME)
-$(NAME) : $(OBJ)
+$(NAME) :
 	$(CXX) $(FLAGS) $(SRC) -o $(NAME)
 fclean :
 	rm -f $(NAME)

@@ -6,7 +6,7 @@
 #    By: ael-oual <ael-oual@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 1980/01/01 01:48:04 by sultan            #+#    #+#              #
-#    Updated: 2022/11/10 07:41:03 by ael-oual         ###   ########.fr        #
+#    Updated: 2022/11/11 10:14:20 by ael-oual         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ FLAGS = -Wall -Wextra -Werror -std=c++98
 CC = c++
 NAME = Weapon
 all : $(NAME)
-$(NAME) :
+$(NAME) :$(SRC)
 	$(CC) $(FLAGS) $(SRC) -o $(NAME)
 fclean :
 	rm -f $(NAME)

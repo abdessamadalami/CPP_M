@@ -6,7 +6,7 @@
 /*   By: ael-oual <ael-oual@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 18:17:59 by ael-oual          #+#    #+#             */
-/*   Updated: 2022/09/26 18:18:32 by ael-oual         ###   ########.fr       */
+/*   Updated: 2022/11/12 08:47:03 by ael-oual         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ Fixed::Fixed()
 
 Fixed::Fixed(const Fixed &a)
 {
-    value = a.value;
     std :: cout << "Copy constructor called\n";
+    *this = a;
 }
 
 Fixed::~Fixed()
@@ -37,4 +37,12 @@ int Fixed:: getRawBits(void) const
 
 void Fixed:: setRawBits( int const raw )
 {
+    this->value = raw;
+}
+
+Fixed& Fixed:: operator =(const Fixed &a)
+{
+    std::cout << "copy assingment operator called\n";
+    this->value = a.getRawBits();
+    return *this;
 }

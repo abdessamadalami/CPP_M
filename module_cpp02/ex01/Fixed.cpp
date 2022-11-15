@@ -6,7 +6,7 @@
 /*   By: ael-oual <ael-oual@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 18:17:59 by ael-oual          #+#    #+#             */
-/*   Updated: 2022/11/08 15:13:24 by ael-oual         ###   ########.fr       */
+/*   Updated: 2022/11/13 10:25:16 by ael-oual         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,15 @@
 
 Fixed:: Fixed(const float F)
  {
-    float A = F;
-    float v = 1 << 8;
-    A = A * v;
-    std:: cout << "Float constructor called " << std::endl;
+    float A = F * (1 << this->shift);
+    std:: cout << "Float constructor called " << A << std::endl;
     fixed_point = roundf(A);
  }
 
 Fixed :: Fixed(const int a)
 {
-
     int A = a;
-    A = A  << 8;
+    A = A  << this->shift;
     std :: cout << " Int constructor called \n" ;
     fixed_point = A;
 }
@@ -37,21 +34,17 @@ Fixed::Fixed()
     std :: cout << "Default constructor called\n";  
 }
 
-Fixed::Fixed(const Fixed &a)
+Fixed::Fixed(const Fixed &old_obj)
 {
-    this->fixed_point = a.fixed_point;
     std :: cout << " Copy constructor called\n";
+    *this = old_obj;
 }
- Fixed  Fixed::operator = (const Fixed& t)
- {
-    this->fixed_point = t.fixed_point;
-    std:: cout << "Assignment operator called " << std::endl;
-    return *this;
- }
-    
-Fixed::~Fixed()
+
+Fixed&  Fixed::operator = (const Fixed& t)
 {
-    std :: cout << "Destructor called\n";
+    this->fixed_point = t.fixed_point;
+    std:: cout << "Copy Assignment operator called " << std::endl;
+    return *this;
 }
 
 int Fixed:: getRawBits(void) const
@@ -61,16 +54,22 @@ int Fixed:: getRawBits(void) const
 
 void Fixed:: setRawBits( int const raw )
 {
+    this->fixed_point = raw;
 }
 
 float Fixed:: toFloat( void ) const
 {
-float e = fixed_point;
-e = e / (1 << 8);
-return e;
+    float e = fixed_point;
+    e = e / (1 << this->shift);
+    return e;
 }
 
 int Fixed:: toInt( void ) const
 {
-return toFloat() ;
+    return toFloat() ;
+}
+
+Fixed::~Fixed()
+{
+    std :: cout << "Destructor called\n";
 }
