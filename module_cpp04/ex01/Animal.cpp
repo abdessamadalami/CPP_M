@@ -6,50 +6,47 @@
 /*   By: ael-oual <ael-oual@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 11:52:31 by ael-oual          #+#    #+#             */
-/*   Updated: 2022/10/18 10:42:18 by ael-oual         ###   ########.fr       */
+/*   Updated: 2022/11/16 17:40:53 by ael-oual         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"Animal.hpp"
 
-
 Animal::Animal(/* args */)
 {
-   std:: cout << "animal default constructor called \n";
+   std:: cout << "animal default constructor called"<<std::endl;
 }
 
 Animal::Animal(std::string Type):type(Type)
 {
-   std:: cout << "animal constructor called \n";
+   std:: cout << "animal constructor called"<<std::endl;
 }
 
-Animal::~Animal()
+Animal::Animal(const Animal& a)
 {
-   std:: cout << "Animal destructor called \n";
-
+   std::cout << "copy Animal constructor called"<< std::endl ;
+   this->type = a.type;
 }
 
-std::string Animal:: getType()const
+Animal& Animal::operator=(const Animal &t)
+{
+   std::cout << "assignment Animal operator called"<< std::endl;
+   this->type = t.type;
+   return *this;
+}
+
+std::string Animal::getType()const
 {
    return type;
 }
 
-Animal& Animal:: operator=(const Animal &t)
-{
-   std:: cout << "assignment Animal operator called \n";
-    this->type = t.type;
-    return *this;
-}
-
-
-Animal::Animal(const Animal& a)
-{
- std:: cout << "copy Animal operator called _" << a.type <<"_\n" ;
-   
-    this->type = a.type;
-}
-
 void Animal::makeSound()const
 {
-    std:: cout << " 👾 👾 👾 👾 sound \n";
+   std:: cout << " 👾 👾 👾 👾 sound"<< std::endl;
+}
+
+Animal::~Animal()
+{
+   std:: cout << "Animal destructor called"<< std::endl;
+
 }

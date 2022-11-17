@@ -6,7 +6,7 @@
 /*   By: ael-oual <ael-oual@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 08:35:52 by ael-oual          #+#    #+#             */
-/*   Updated: 2022/10/15 18:36:10 by ael-oual         ###   ########.fr       */
+/*   Updated: 2022/11/15 12:09:29 by ael-oual         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ class ScavTrap: virtual public ClapTrap
 {
 
 public:
-    
     ScavTrap(std::string name);
     ScavTrap();
     ScavTrap(const ScavTrap &a);

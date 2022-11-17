@@ -6,7 +6,7 @@
 /*   By: ael-oual <ael-oual@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 08:36:46 by ael-oual          #+#    #+#             */
-/*   Updated: 2022/11/14 19:12:09 by ael-oual         ###   ########.fr       */
+/*   Updated: 2022/11/15 12:09:49 by ael-oual         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void ScavTrap:: attack(const std::string& target) // just read
         std::cout<< "ScavTrap: "<< this->name << ": My Energy_point is:" << this->Energy_point << " i am D3IF" << std::endl;
         return ; 
     }
-    std::cout << "ScavTrap " << name << " attacks " << target <<  " causing " << Attack_damage << " points of damage!" << std:: endl;
+    std::cout << "ScavTrap: " << name << " attacks " << target <<  " causing " << Attack_damage << " points of damage!" << std:: endl;
     Energy_point--;
 }
 

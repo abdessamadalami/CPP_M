@@ -6,7 +6,7 @@
 /*   By: ael-oual <ael-oual@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 12:06:54 by ael-oual          #+#    #+#             */
-/*   Updated: 2022/10/18 08:33:17 by ael-oual         ###   ########.fr       */
+/*   Updated: 2022/11/17 11:48:11 by ael-oual         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,17 +17,17 @@
 #include "Animal.hpp"
 #include "Brain.hpp"
 
-class Cat : public Animal
+class Cat:public Animal
 {
     private:
         Brain *brain;
     public:
         Cat();
-        Cat& operator=(const Cat &t);
         Cat(const Cat& a);
-        ~Cat();
+        Cat& operator=(const Cat &t);
         void makeSound() const;
         std::string getType();
+        ~Cat();
 };
 
 #endif

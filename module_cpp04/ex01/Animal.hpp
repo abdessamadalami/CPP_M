@@ -6,7 +6,7 @@
 /*   By: ael-oual <ael-oual@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 11:50:54 by ael-oual          #+#    #+#             */
-/*   Updated: 2022/10/18 12:54:49 by ael-oual         ###   ########.fr       */
+/*   Updated: 2022/11/16 10:43:24 by ael-oual         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,11 @@ protected:
 public:
     Animal();
     Animal(std::string);
-    virtual Animal& operator=(const Animal &t);
-    virtual ~Animal();
     Animal(const Animal &a);
+    Animal& operator=(const Animal &t);
     std:: string getType()const;
     virtual void makeSound()const;
+    virtual ~Animal();
 };
 
 

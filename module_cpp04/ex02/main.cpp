@@ -6,7 +6,7 @@
 /*   By: ael-oual <ael-oual@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 12:31:33 by ael-oual          #+#    #+#             */
-/*   Updated: 2022/10/18 12:55:38 by ael-oual         ###   ########.fr       */
+/*   Updated: 2022/11/16 15:12:42 by ael-oual         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
         Dog b;
         Dog c  = b;
         Animal *A;
+        //   Animal A; pure funtions
         if (a <= 0)
                 return ;
       
@@ -35,6 +36,7 @@
         std::cout << "\n";
         for(int i = 0; i < a; i++)
                 delete meta[i];
+        delete[] meta;
        
  }
 int main()

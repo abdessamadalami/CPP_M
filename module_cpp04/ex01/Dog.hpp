@@ -6,7 +6,7 @@
 /*   By: ael-oual <ael-oual@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 12:03:42 by ael-oual          #+#    #+#             */
-/*   Updated: 2022/10/18 11:48:34 by ael-oual         ###   ########.fr       */
+/*   Updated: 2022/11/16 18:15:57 by ael-oual         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,11 @@ class Dog : public Animal
         Brain *brain;
     public:
         Dog();
+        Dog(const Dog& a);
         Dog& operator=(const Dog &t);
         void makeSound()const;
-        Dog(const Dog& a);
         std::string getType();
+        void set_null();
         ~Dog();
 };
 #endif
