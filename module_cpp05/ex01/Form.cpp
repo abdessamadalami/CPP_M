@@ -6,56 +6,77 @@
 /*   By: ael-oual <ael-oual@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 14:25:24 by sultan            #+#    #+#             */
-/*   Updated: 2022/11/11 11:17:45 by ael-oual         ###   ########.fr       */
+/*   Updated: 2022/11/22 19:42:38 by ael-oual         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include "Form.hpp"
-
+#include "exception.hpp"
 #include <iostream>
 
-Form:: Form():name("default"), index(-1) , grade_req_to_sign (-1),grade_req_to_execut(-1)
+GradeTooHighException_form Form::GradeTooHighException_for;
+GradeTooLowException_form Form::GradeTooLowException_for;
+
+Form:: Form():name("default"), index(1) , grade_req_to_sign (1),grade_req_to_execut(1)
 {
-    std::cout << "defualt constructor called " << std::endl;
-}
-Form:: Form(const std::string n, bool index, const int s, const int e) : name(n), index(index), grade_req_to_sign(s), grade_req_to_execut(e)
-{
-    std::cout << "constructor Form called " << std::endl;
+    std::cout << "Form: defualt constructor called " << std::endl;
 }
 
-Form::~Form()
+Form:: Form(const std::string n, bool index, const int s, const int e):name(n), index(index),
+        grade_req_to_sign(s), grade_req_to_execut(e)
 {
-    std::cout << "Form destructor called " << std::endl;
+    std::cout << "Form: constructor Form called " << std::endl;
+    if (grade_req_to_sign < 1 || grade_req_to_execut < 1)
+        throw GradeTooHighException_for;
+    else if ( grade_req_to_sign > 150 || grade_req_to_execut > 150)
+        throw GradeTooLowException_for;
+}
+
+Form::Form(const Form& old_obj): name(old_obj.name), index(old_obj.index),
+                                grade_req_to_sign(old_obj.grade_req_to_sign),
+                                grade_req_to_execut(old_obj.grade_req_to_sign)
+{
+    std::cout << "Form: copy constructor Form called " << std::endl;
+}
+
+Form& Form::operator=(const Form &old_obj)
+{
+    std:: cout << "Form: assingnemt operator called" << std::endl;
+    this->index = old_obj.index;
+    return *this;
 }
 
 std:: string Form:: get_name() const
 {
     return this -> name;
 }
-bool Form:: get_index()const
+
+bool Form::get_index()const
 {
-    return this -> index;
+    return this->index;
 }
 
-int Form:: get_grade_req_to_sign()const
+int Form::get_grade_req_to_sign()const
 {
-    return this ->grade_req_to_sign;
+    return this->grade_req_to_sign;
 }
 
-int Form:: get_grade_req_to_execut()const
+int Form::get_grade_req_to_execut()const
 {
-    return this ->grade_req_to_execut;
+    return this->grade_req_to_execut;
 }
 
-void Form:: beSigned(Bureaucrat &A)
+void Form::beSigned(Bureaucrat &A)
 {
+    std::cout << " in beSigned " << std::endl; 
     if (A.getGrade() <= grade_req_to_sign)
-    {
         this->index = true;
-    }
     else
-    {
         this->index = false;
-    }
+}
+
+Form::~Form()
+{
+    std::cout << "Form: destructor called " << std::endl;
 }

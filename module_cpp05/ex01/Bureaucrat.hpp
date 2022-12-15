@@ -6,7 +6,7 @@
 /*   By: ael-oual <ael-oual@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 07:07:07 by ael-oual          #+#    #+#             */
-/*   Updated: 2022/10/25 14:50:58 by ael-oual         ###   ########.fr       */
+/*   Updated: 2022/11/22 19:56:47 by ael-oual         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,43 +14,26 @@
 #define BUREAUCRAT_HPP
 #include <iostream>
 #include "Form.hpp"
-class Form;
+#include "exception.hpp"
+// class Form;
 class Bureaucrat 
 {
-    class  GradeTooHighException : public std:: exception
-    {
-        public: 
-            const char * what() const throw()
-            {
-                return "Grade Too High Exception";
-            }
-    };
-
-    class  GradeTooLowException : public std:: exception
-    {
-        public: 
-            const char * what() const throw()
-            {
-                return "Grade Too Low Exception";
-            }  
-    };
-    
     private:
         const std:: string name;
         int grade;
-        Form f[8];
     public:
         Bureaucrat(/* args */);
-        Bureaucrat(std::string name, int grade);   
-        ~Bureaucrat();
-        // void GradeTooHighException();
-        // void GradeTooLowException();
+        Bureaucrat(std::string name, int grade);
+        Bureaucrat(const Bureaucrat& old_obj);
+        Bureaucrat& operator=(const Bureaucrat &B);
         int getGrade()const;
         std:: string getName()const;
         void increment();
         void decriment();
-        Bureaucrat operator=( const Bureaucrat &B);
-        void signForm( Form &form);
+        void signForm(Form &form);
+        ~Bureaucrat();
+        static GradeTooLowException GradeTooLow_Exception;
+        static GradeTooHighException GradeTooHigh_Exception;
 };
 
 std::ostream& operator<< (std:: ostream& COUT, const Bureaucrat& B);

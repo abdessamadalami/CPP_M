@@ -6,7 +6,7 @@
 /*   By: ael-oual <ael-oual@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/25 11:07:10 by ael-oual          #+#    #+#             */
-/*   Updated: 2022/09/25 11:30:13 by ael-oual         ###   ########.fr       */
+/*   Updated: 2022/11/22 11:00:39 by ael-oual         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ std:: string check_string(std ::string str);
 class Contact
 {
     private :
-        std::string first_name;
+        static std::string first_name;
         std::string last_name;
         std::string nickname;
         std::string phone;

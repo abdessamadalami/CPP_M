@@ -6,7 +6,7 @@
 /*   By: ael-oual <ael-oual@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 10:27:57 by ael-oual          #+#    #+#             */
-/*   Updated: 2022/11/08 08:21:55 by ael-oual         ###   ########.fr       */
+/*   Updated: 2022/12/05 12:40:58 by ael-oual         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,13 @@
 template<typename T> 
 void easyfind(T Tem, int nbr)
 {
+    typename T::iterator iter;
     std::string exp = "Element not found.\n";
-     std::vector<int>::iterator iterator_ptr = std::find(begin(Tem), end(Tem), nbr);
-    if (iterator_ptr != Tem.end())
+    iter = std::find(begin(Tem), end(Tem), nbr);
+    if (iter != Tem.end())
     {
         std::cout <<"Element " << nbr <<" Index : " ;
-        std::cout << std::distance(Tem.begin(), iterator_ptr) << std::endl ;
+        std::cout << std::distance(Tem.begin(), iter) << std::endl ;
     }
     else
         throw(exp);

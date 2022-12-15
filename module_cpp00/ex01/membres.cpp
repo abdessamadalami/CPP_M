@@ -6,7 +6,7 @@
 /*   By: ael-oual <ael-oual@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/17 14:03:44 by ael-oual          #+#    #+#             */
-/*   Updated: 2022/09/25 11:38:36 by ael-oual         ###   ########.fr       */
+/*   Updated: 2022/11/22 11:02:09 by ael-oual         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,9 @@ void Contact:: display(int index, int a)
         }
     }
     
-    void  Contact:: set(std::string First_name,std::string Last_name,std::string Nickname,std::string Phone_number,std::string Secret)
+
+    
+    void  Contact::set(std::string First_name,std::string Last_name,std::string Nickname,std::string Phone_number,std::string Secret)
     {
         first_name = First_name;
         last_name = Last_name;

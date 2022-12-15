@@ -6,7 +6,7 @@
 /*   By: ael-oual <ael-oual@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 10:20:08 by ael-oual          #+#    #+#             */
-/*   Updated: 2022/11/13 11:29:20 by ael-oual         ###   ########.fr       */
+/*   Updated: 2022/12/14 16:40:18 by ael-oual         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,42 +16,50 @@
 #include "PresidentialPardonForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "ShrubberyCreationForm.hpp"
-class  Form;
-class PresidentialPardonForm;
-class RobotomyRequestForm;
-class ShrubberyCreationForm;
+
+s_GradeTooHighException Intern:: notfound;
 Intern:: Intern()
 {
-    std:: cout << "Intern constructor called " << std::endl;
+    //  std:: cout << "Intern: Intern constructor called " << std::endl;
 }
+
+Intern::Intern(const Intern &old_obj)
+{
+    (void)old_obj;
+    // std::cout << "Intern: copy constructor called" << std::endl;
+}
+
+Intern& Intern:: operator= (const Intern &old_obj)
+{
+    (void)old_obj;
+    return (*this);
+}
+
 Form* Intern :: makeForm(std:: string name, std:: string target)
 {
-    //   std:: string ptr[] = {"PresidentialPardonForm" ,"RobotomyRequestForm","ShrubberyCreationForm"};
-    // void (*arr[]) (target) = { 
-    //                                 &PresidentialPardonForm::PresidentialPardonForm(target),
-    //                                 &RobotomyRequestForm::RobotomyRequestForm(target),
-    //                                 &ShrubberyCreationForm::ShrubberyCreationForm(target),
-                                // };
-    int index = ((name == "PresidentialPardonForm") * 0 + (name == "RobotomyRequestForm") * 1 +  (name == "ShrubberyCreationForm") *  2 );
     
-    switch (index)
+    std::cout << "Intern: make form function " << std::endl;
+    
+    int index = ((name == "PresidentialPardonForm") * 0 + (name == "RobotomyRequestForm") * 1 + (name == "ShrubberyCreationForm") *  2);
+    if (index == 0 && name != "PresidentialPardonForm")
+        throw notfound;
+    Form (*arr[]) = { 
+                        new PresidentialPardonForm(target),
+                        new RobotomyRequestForm(target),
+                        new ShrubberyCreationForm(target),
+                    };
+
+
+    for (int i = 0; i < 3; i++)
     {
-    case 0:
-        return new PresidentialPardonForm(target);
-        break;
-    case 1:
-        return new RobotomyRequestForm(target);
-        break;
-    case 2:
-        return new ShrubberyCreationForm(target);
-        break;
-    default:
-        return (0);
-        break;
+        if (i != index)
+            delete arr[i];
     }
+    return arr[index];
+    
 }
 
 Intern :: ~Intern()
 {
-    std:: cout << "Intern destructor calles " << std::endl;
+    //  std:: cout << "Intern: destructor calles " << std::endl;
 }

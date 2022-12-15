@@ -6,7 +6,7 @@
 /*   By: ael-oual <ael-oual@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 16:05:06 by ael-oual          #+#    #+#             */
-/*   Updated: 2022/10/20 17:32:50 by ael-oual         ###   ########.fr       */
+/*   Updated: 2022/11/22 14:53:48 by ael-oual         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,21 @@
 #include <iostream>
 #include "Form.hpp"
 #include "Bureaucrat.hpp"
-#include <fstream>
-
-class PresidentialPardonForm : public Form
+#include "exception.hpp"
+class Bureaucrat;
+class PresidentialPardonForm:public Form
 {
     private:
         std::string target;
     public:
         PresidentialPardonForm();
-        PresidentialPardonForm(std:: string target);
+        PresidentialPardonForm(std::string target);
+        PresidentialPardonForm(const PresidentialPardonForm& old_obj);
+        PresidentialPardonForm& operator=(const PresidentialPardonForm& old_obj);
+        void execute(const Bureaucrat& executor);
+        static NOT_S not_signed;
+        static NOT_EXC not_excute;
         ~PresidentialPardonForm();
-        void execute(Bureaucrat const & executor);
 };
 
 #endif

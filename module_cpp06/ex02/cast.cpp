@@ -6,7 +6,7 @@
 /*   By: ael-oual <ael-oual@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 12:16:51 by ael-oual          #+#    #+#             */
-/*   Updated: 2022/11/03 21:12:05 by ael-oual         ###   ########.fr       */
+/*   Updated: 2022/11/28 11:14:24 by ael-oual         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@
 
 Base * generate(void)
 {
-    
     int ran;
+    std::cout << " .  jj " << time(0) << std::endl;
     srand(time(0));
     ran = rand();
     if (ran % 2 == 0)
@@ -27,48 +27,48 @@ Base * generate(void)
     return (new C);
 }
 
-void identify(Base* p)
+void identify(Base* base)
 {
-    A *a = dynamic_cast <A *>(p);
-    B *b = dynamic_cast <B *>(p);
-    C *c = dynamic_cast <C *>(p);
+    A *drive_a = dynamic_cast <A*>(base);
+    B *drive_b = dynamic_cast <B*>(base);
+    C *drive_c = dynamic_cast <C*>(base);
     
-    if (a != NULL)
+    if (drive_a != NULL)
         std:: cout << "this is A\n";
-    else if(b != NULL)
+    else if(drive_b != NULL)
         std:: cout << "this is B\n"; 
-    else if (c != NULL)
+    else if (drive_c != NULL)
         std:: cout << "this is C\n";    
 }
 
-void identify(Base& p)
+void identify(Base& base)
 {
     try
     {
-        A a = dynamic_cast <A &>(p);
+        A drive_a = dynamic_cast <A&>(base);
         std:: cout << "this is A\n";
     }
 
     catch (const std::bad_cast& e)
     {
-         try
-         {
-            B b = dynamic_cast <B &>(p);
-            std:: cout << "this is B\n";
-         }
-         catch(const std::bad_cast& e)
-         {
+        try
+        {
+            B drive_b = dynamic_cast <B&>(base);
+            std::cout << "this is B\n";
+        }
+        catch(const std::bad_cast& e)
+        {
             try
             {
-                C c = dynamic_cast <C &>(p);
-                std:: cout << "this is C\n";
+                C drive_c = dynamic_cast <C&>(base);
+                std::cout << "this is C\n";
             }
             catch(const std::bad_cast& e)
             {
                 std::cerr << e.what() << '\n';
             }
-         }
     }
+}
 }
 
 int main()

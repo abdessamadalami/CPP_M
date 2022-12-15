@@ -6,7 +6,7 @@
 /*   By: ael-oual <ael-oual@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 17:54:40 by ael-oual          #+#    #+#             */
-/*   Updated: 2022/10/20 17:55:58 by ael-oual         ###   ########.fr       */
+/*   Updated: 2022/11/22 14:55:45 by ael-oual         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,12 @@ class RobotomyRequestForm : public Form
     public:
         RobotomyRequestForm();
         RobotomyRequestForm(std:: string target);
-        ~RobotomyRequestForm();
+        RobotomyRequestForm(const RobotomyRequestForm& old_obj);
+        RobotomyRequestForm& operator=(const RobotomyRequestForm& old_obj);
         void execute(Bureaucrat const & executor);
+        static NOT_S not_signed;
+        static NOT_EXC not_excute;
+        ~RobotomyRequestForm();
 };
 
 #endif

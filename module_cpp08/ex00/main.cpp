@@ -6,7 +6,7 @@
 /*   By: ael-oual <ael-oual@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 10:27:32 by ael-oual          #+#    #+#             */
-/*   Updated: 2022/11/08 08:20:59 by ael-oual         ###   ########.fr       */
+/*   Updated: 2022/12/05 12:34:47 by ael-oual         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,10 @@ int main()
     try
     {
         easyfind(vect, -1);
+       // easyfind(alami, 97);
     }
     catch(std::string e)
     {
         std::cerr << e;
     }
-    
 }

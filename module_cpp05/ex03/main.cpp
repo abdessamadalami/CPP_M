@@ -6,13 +6,15 @@
 /*   By: ael-oual <ael-oual@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 07:39:05 by ael-oual          #+#    #+#             */
-/*   Updated: 2022/10/21 18:35:26 by ael-oual         ###   ########.fr       */
+/*   Updated: 2022/12/14 16:37:36 by ael-oual         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
 #include "PresidentialPardonForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "ShrubberyCreationForm.hpp"
 #include "Intern.hpp"
 
 
@@ -26,20 +28,21 @@ int main()
 {
     try
     {
-        Intern a;
-        Bureaucrat alami("alami", 140);
-        Form goole("google", 0, 2,12);
-        Form *l = a.makeForm("ShrubberyCreationForm", "alami");
-         std:: cout << "the return from "<< l->get_name() << std:: endl;
-        delete l;
-        // alami.signForm(goole);
-        // std::cout << "alami";
-        // alami.increment();
-        // alami.increment();
-        // PresidentialPardonForm google("google");
-        // google.execute(alami);]
-        //delete l;
+        Bureaucrat alami("alami", 136);
+        PresidentialPardonForm google("google");
+        RobotomyRequestForm amazon("amazone");
+        ShrubberyCreationForm apple("apple");
         
+        
+        // google.beSigned(alami);
+        // google.execute(alami);
+        
+        // amazon.beSigned(alami);
+        // amazon.execute(alami);
+        Intern intern; intern.makeForm("PresidentialPardonForm","dsff");
+        //apple.beSigned(alami);
+        //apple.execute(alami);
+  
     }
     catch (const std::exception& myCustomException) //! the catch call destructor for destroy the object 
     {

@@ -6,12 +6,12 @@
 /*   By: ael-oual <ael-oual@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 18:21:11 by ael-oual          #+#    #+#             */
-/*   Updated: 2022/10/21 14:42:14 by ael-oual         ###   ########.fr       */
+/*   Updated: 2022/11/22 15:17:24 by ael-oual         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SURUBBERYCREATIONFORM_HPP
-#define SURUBBERYCREATIONFORM_HPP
+#ifndef ROBO
+#define ROBO
 #include <iostream>
 #include "Form.hpp"
 #include "Bureaucrat.hpp"
@@ -24,8 +24,12 @@ class ShrubberyCreationForm : public Form
     public:
         ShrubberyCreationForm();
         ShrubberyCreationForm(std:: string target);
-        ~ShrubberyCreationForm();
+        ShrubberyCreationForm(const ShrubberyCreationForm& old_obj);
+        ShrubberyCreationForm& operator=(const ShrubberyCreationForm& old_obj);
         void execute(Bureaucrat const & executor);
+        static NOT_S not_signed;
+        static NOT_EXC not_excute;
+        ~ShrubberyCreationForm();
 };
 
 #endif
