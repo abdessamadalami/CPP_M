@@ -6,7 +6,7 @@
 /*   By: ael-oual <ael-oual@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 18:17:59 by ael-oual          #+#    #+#             */
-/*   Updated: 2022/11/13 12:16:05 by ael-oual         ###   ########.fr       */
+/*   Updated: 2023/03/11 20:21:46 by ael-oual         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,7 +110,7 @@ bool  Fixed:: operator!=(const Fixed &a)const
 
 //! membre functions operators + - * /
 
-Fixed  Fixed:: operator+(const Fixed &l_obj)const
+Fixed  Fixed:: operator+(  )const
 {
     Fixed fixed;
     std::cout << l_obj;

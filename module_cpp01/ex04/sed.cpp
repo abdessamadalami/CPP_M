@@ -6,7 +6,7 @@
 /*   By: ael-oual <ael-oual@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/24 09:58:14 by ael-oual          #+#    #+#             */
-/*   Updated: 2022/11/10 08:10:57 by ael-oual         ###   ########.fr       */
+/*   Updated: 2023/03/11 16:02:05 by ael-oual         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void file_rep::sed_f()
     if(!input)
     {
         std:: cerr<< "error file" << std::endl;
-       exit(1);
+        exit(1);
     }
     while (input)
     {
