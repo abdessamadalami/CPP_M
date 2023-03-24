@@ -4,88 +4,126 @@
 #include <map>
 #include <algorithm>
 #include <vector>
+#include <ctime>
 
-
-void print(std::vector<int> &Numbers)
+template<typename T>
+void print(T &Numbers)
 {
-    std::cout << "------------------------------\n";
     for (size_t i = 0; i < Numbers.size(); i++)
     {
         std::cout << Numbers[i] << " ";
     }
-    std::cout << "\n------------------------------\n";
 }
 
-void InsertSortvector(std::vector<int> &Numbers)
+void MergeSortVector(std::vector<int> &Numbers)
 {
-    int nbr1,nbr2,j;
-
-    for (size_t i = 0; i < Numbers.size(); i++)
+    std::vector<int> mainchein;
+    
+    int last;
+    last = -1;
+    if(Numbers.size() %2 != 0)
     {
-
-        nbr1 = Numbers[i];
-        j = i - 1;
-        while (j >= 0 && Numbers[j] > nbr1)
-        {
-            Numbers[j + 1] = Numbers[j];
-            j = j - 1;
-        }
-        Numbers[j + 1] = nbr1;   
+        last = Numbers[Numbers.size() - 1];
+        Numbers.pop_back();
     }
-    std::cout << " in Inserting sort: \n";
-    print(Numbers);
+    std::vector<std::pair<int, int> > Vectorsofpair;
+    for (size_t i = 0; i < Numbers.size(); i+=2)
+    {
+        std::pair<int, int>pair;
+        if( Numbers[i] > Numbers[i+1])
+            std::swap(Numbers[i],Numbers[i + 1]);
+        pair.first = Numbers[i];
+        pair.second = Numbers[i + 1];
+        Vectorsofpair.push_back(pair);
+    }
+    std::sort(begin(Vectorsofpair), end(Vectorsofpair));
+    for (size_t i = 0; i < Vectorsofpair.size(); i++)
+    {
+        mainchein.push_back(Vectorsofpair[i].first);
+        //std::cout  << " first: "<<  Vectorsofpair[i].first << " second: " <<  Vectorsofpair[i].second << std::endl;
+    }
+
+    std::vector<int>::iterator it;
+    for (size_t i = 0; i < Vectorsofpair.size(); i++)
+    {
+        it = std::upper_bound(begin(mainchein), end(mainchein), Vectorsofpair[i].second);
+        mainchein.insert(it, Vectorsofpair[i].second);
+    }
+     if(last != -1)
+    {
+        it = std::upper_bound(begin(mainchein), end(mainchein), last);
+        mainchein.insert(it, last);
+    }
+    std::cout<< "After:  ";
+    print(mainchein);
 }
 
-void Merge(std::vector<int> SubNumbers1,std::vector<int> SubNumbers2)
+void MergeSortDeque(std::deque<int> &Numbers)
 {
+    std::deque<int> mainchein;
     
+    int  last;
+    last = -1;
+    if(Numbers.size() %2 != 0)
+    {
+        last = Numbers[Numbers.size() - 1];
+        Numbers.pop_back();
+    }
+    std::deque<std::pair<int, int> > Dequesofpair;
+    for (size_t i = 0; i < Numbers.size(); i+=2)
+    {
+        std::pair<int, int>pair;
+        if(Numbers[i] > Numbers[i+1])
+            std::swap(Numbers[i],Numbers[i + 1]);
+        pair.first = Numbers[i];
+        pair.second = Numbers[i + 1];
+        Dequesofpair.push_back(pair);
+    }
+    std::sort(begin(Dequesofpair), end(Dequesofpair));
+    for (size_t i = 0; i < Dequesofpair.size(); i++)
+        mainchein.push_back(Dequesofpair[i].first);
 
+    std::deque<int>::iterator it;
+    for (size_t i = 0; i < Dequesofpair.size(); i++)
+    {
+        it = std::upper_bound(begin(mainchein), end(mainchein), Dequesofpair[i].second);
+        mainchein.insert(it, Dequesofpair[i].second);
+    }
+    if(last != -1)
+    {
+        it = std::upper_bound(begin(mainchein), end(mainchein), last);
+        mainchein.insert(it, last);
+    }
 }
 
-void MergeSortVector(std::vector<int> &Numbers , std::vector<int> &NewNumbers)
-{
-   
-    int mid;
-    mid = Numbers.size()/2;
-    std::vector<int> SubNumbers1;
-    std::vector<int> SubNumbers2;
-    
-    //std::copy (Numbers.begin(), Numbers.begin() + mid,SubNumbers1.begin());
-    SubNumbers1.assign(Numbers.begin(), Numbers.begin() + mid);
-    SubNumbers2.assign(Numbers.begin() + mid, Numbers.end());
-
-    if(SubNumbers1.size() > 3)MergeSortVector(SubNumbers1,NewNumbers);
-    if(SubNumbers2.size() > 3)MergeSortVector(SubNumbers2,NewNumbers);
-
-    std::cout << "I am SubNumbers1\n";
-    print(SubNumbers1);
-    std::cout << "I am SubNumbers2\n";
-    print(SubNumbers2);
-    if(SubNumbers1.size() <= 3)
-        InsertSortvector(SubNumbers1);
-    if(SubNumbers2.size() <= 3)
-        InsertSortvector(SubNumbers2);
-    std::cout << "********************************\n";
-    merge(SubNumbers1.begin(), SubNumbers1.end(), SubNumbers2.begin(), SubNumbers2.end(), NewNumbers.begin());
-    print(NewNumbers);
-  std::cout << "********************************\n";
-}
-
-int main(int ag , char **av)
+int main(int ag , char **av) 
 {
     int i = 1;
-    int nbr, n1, n2;
-    std::vector<int> Numbers; 
-    std::vector<int> NewNumbers(ag - 1);
-    std::cout << NewNumbers.size() << std::endl;
 
+     if(ag != 2)
+    {
+        std::cout << "error\n";
+        return 0;
+    }
+    std::vector<int> Numbers; 
+    std::deque<int> Numbers1; 
     //NewNumbers.push_back(5);
+    std::cout << "Before:  ";
     while (i < ag)
     {
+        std::cout << av[i] << " ";
         Numbers.push_back(atoi(av[i]));
+        Numbers1.push_back(atoi(av[i]));
         i++;
     }
-    MergeSortVector(Numbers,NewNumbers);
-   /*  if(ag < 6)
-        InsertSortvector(Numbers); */
+    std::cout << std::endl;
+    clock_t time_req = clock();
+    MergeSortVector(Numbers);
+    clock_t time_req1 = clock() - time_req;
+    std::cout << "\nTime to process a range of   "<< ag - 1 << " elements with std::vector is:" <<  (double)time_req1 << std::endl;
+    time_req = clock();
+    MergeSortDeque(Numbers1);
+    time_req1 = clock() - time_req;
+    std::cout << "Time to process a range of   "<< ag - 1 << " elements with std::deque is:" <<  (double)time_req1 << std::endl;
+    
 }

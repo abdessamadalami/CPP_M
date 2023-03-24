@@ -1,6 +1,6 @@
-SRC =  main.cpp PmergeMe.cpp
-FLAGS =  -Wall -Wextra -Werror -std=c++98
-NAME = PmergeMe
+SRC =  main.cpp RPN.cpp
+FLAGS = -Wall -Wextra -Werror -std=c++98
+NAME = RPN
 
 all : $(NAME)
 $(NAME) : $(SRC)

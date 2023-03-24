@@ -1,6 +1,6 @@
 SRC =  main.cpp BitcoinExchange.cpp
 FLAGS = -Wall -Wextra -Werror -std=c++98
-NAME = easyfind
+NAME = btc
 
 all : $(NAME)
 $(NAME) : $(SRC)

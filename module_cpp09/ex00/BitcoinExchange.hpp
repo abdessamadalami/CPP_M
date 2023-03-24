@@ -1,32 +1,20 @@
 
 #include <iostream>
 #include <fstream>
+#include <iostream>
+#include <map>
+#include <algorithm>
+
 class BitcoinExchange
 {
 private:
-     std::string lien;
+    std::map<std::string,std::string> data;
+     
 public:
-    BitcoinExchange(std::string lien):lien(lien);
     BitcoinExchange();
-    void CheckLine();
+    BitcoinExchange(const BitcoinExchange &a);
+    BitcoinExchange& operator =(const BitcoinExchange& OldObj);
+    void CheckLine(std::string line);
+    int CheckStringNumber(std::string &val, int comma);
     ~BitcoinExchange();
 };
-void BitcoinExchange:: CheckLine()
-{
-    
-    
-}
-
-BitcoinExchange::BitcoinExchange(/* args */)
-{
-}
-
-BitcoinExchange::BitcoinExchange(std::string line)
-{
-    CheckLine();
-
-}
-
-BitcoinExchange::~BitcoinExchange()
-{
-}

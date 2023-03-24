@@ -66,6 +66,8 @@
         "stack": "cpp",
         "__functional_03": "cpp",
         "queue": "cpp",
-        "list": "cpp"
+        "list": "cpp",
+        "__tree": "cpp",
+        "map": "cpp"
     }
 }
